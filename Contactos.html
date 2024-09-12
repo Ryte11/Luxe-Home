@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/COntactos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Contactos</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="menu">
+        <div class="logo" data-aos="fade-right" data-aos-duration="1400">
+          <a href="#">
+            <div class="logo_back">
+              <img src="img/icons8-casa-26.png" alt="" />
+            </div>
+            <h1>Luxe Home</h1>
+          </a>
+        </div>
+       
+        <nav class="nav" data-aos="fade-down" data-aos-duration="1400" id="ul">
+          <ul class="menu" id="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Productos.html">Products</a></li>
+            <li><a href="index.html">Destacados</a></li>
+            <li><a href="index.html">¿Quienes somos?</a></li>
+            <li><a href="Contactos.html">Contact US</a></li>
+          </ul>
+        </nav>
+
+        <div class="iconos" data-aos="fade-left" data-aos-duration="1400">
+          <div class="like" onclick="abrirCarrito()">
+            <span class="like-button" id="like-button">0</span>
+            <button>
+              <img src="img/icons8-me-gusta-24.png" alt="" class="icon1" />
+            </button>
+          </div>
+          <div class="profile" onclick="mostrarFormulario()">
+            <button>
+              <img src="img/icons8-usuario-50.png" alt="" class="icon2" />
+            </button>
+          </div>
+          
+          <button id="abrir" class="abrir-menu" onclick="menuAbrir()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+              <path widht="80px" fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+            </svg>
+          </button>
+          
+       
+        </div>
+      </div>
+    </header>
+
+    <!-- Menu desplegable  -->
+    <div class="over" id="over"></div>
+    <div id="carrito1" class="carrito1">
+        <div class="arriba_text1">
+            <img src="img/icons8-x-50.png" alt="" onclick="MenuCerrar()">
+        </div>
+        <nav class="nav1" data-aos="fade-down" data-aos-duration="1400" id="ul">
+         <ul class="menu1" id="menu">
+           <li><a href="index.html">Home</a></li>
+           <li><a href="Productos.html">Products</a></li>
+           <li><a href="#seccion1">Destacados</a></li>
+           <li><a href="#seccion2">¿Quienes somos?</a></li>
+           <li><a href="Contactos.html">Contact US</a></li>
+         </ul>
+       </nav>
+    </div>
+
+    <!-- Form -->
+    <div class="overlay" id="overlay"></div>
+    <div class="form-box" id="formBox">
+      <form class="form" onsubmit="return validacion(event)" id="form">
+        <span class="title">Sign up</span>
+        <span class="subtitle">Crea una cuenta gratuita con tu email.</span>
+        <div class="form-container">
+          <input
+            type="text"
+            class="input1"
+            placeholder="Nombre Completo"
+            id="name"
+          />
+          <input type="email" class="input1" placeholder="Email" id="email" />
+          <input
+            type="password"
+            class="input1"
+            placeholder="Password"
+            id="password"
+          />
+        </div>
+        <button type="submit">Sign up</button>
+      </form>
+      <div class="form-section">
+        <p>
+          Ya tienes una cuenta?
+          <button onclick="mostrarFormulario1()">Inicia sesión</button>
+        </p>
+      </div>
+    </div>
+
+    <div class="form-box" id="formBox1">
+      <form class="form" onsubmit="return validacion1(event)" id="form1">
+        <span class="title">Log in</span>
+        <span class="subtitle">Inicia seccion con tu cuenta.</span>
+        <div class="form-container">
+          <input type="email" class="input1" placeholder="Email" id="email1" />
+          <input
+            type="password"
+            class="input1"
+            placeholder="Password"
+            id="password1"
+          />
+        </div>
+        <button type="submit">Log In</button>
+      </form>
+    </div>
+
+    <div class="fondo">
+      <div class="overlay2">
+        <h1>Contact Us</h1>
+      </div>
+    </div>
+
+    <div class="sucursales">
+      <div class="centro">
+        <div class="izquiera_contact">
+          <div>
+            <h1>Naco city Office</h1>
+            <p>
+              ¡Descubre el hogar de tus sueños en la hermosa zona de Naco,
+              República Dominicana! En nuestra sucursal en Naco RD, nos
+              enorgullece ofrecerte una amplia gama de opciones de vivienda que
+              se adaptan a tus necesidades y estilo de vida. Con una ubicación
+              privilegiada en una de las zonas más exclusivas de la ciudad,
+              nuestras propiedades en Naco ofrecen un estilo de vida
+              incomparable.
+            </p>
+          </div>
+          <div class="contactos">
+            <div class="iconos_contac">
+              <div class="iconos_contac2">
+                <img src="img/icons8-teléfono-desconectado-50.png" alt="" />
+                <div class="texto_contact">
+                  <h1>Llama aquí!</h1>
+                  <p>829-912-9914</p>
+                </div>
+              </div>
+
+              <div class="iconos_contac2">
+                <img src="img/icons8-marcador-de-mapa-64.png" alt="" />
+                <div class="texto_contact">
+                  <p>Calle Prol Gracita Alvarez, Santo Domingo</p>
+                </div>
+              </div>
+            </div>
+            <div class="iconos_contac">
+              <div class="iconos_contac2">
+                <img src="img/icons8-preguntas-60.png" alt="" />
+                <div class="texto_contact">
+                  <h1>¿Tienes alguna pregunta?</h1>
+                  <a href="https://mail.google.com/mail/u/0/#inbox"
+                    >luisangelgamer20@gmail.com</a
+                  >
+                </div>
+              </div>
+              <div class="iconos_contac2">
+                <img src="img/icons8-calendario-50.png" alt="" />
+                <div class="texto_contact">
+                  <h1>Lunes----Viernes</h1>
+                  <p>9:00 AM---6:00 PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="derecha_contact">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15136.760658533862!2d-69.93281846641928!3d18.47504349380581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf89c4d6bbbf03%3A0x976f2f4e30bd9e7c!2sEnsanche%20Naco%2C%20Santo%20Domingo!5e0!3m2!1ses-419!2sdo!4v1711650513070!5m2!1ses-419!2sdo"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="linea_larga"></div>
+
+    <div class="sucursales">
+      <div class="centro">
+        <div class="izquiera_contact">
+          <div>
+            <h1>Santiago city Office</h1>
+            <p>
+              ¡Encuentra tu próximo hogar en la vibrante ciudad de Santiago,
+              República Dominicana! En nuestra oficina en Santiago, nos
+              enorgullece ofrecerte una amplia selección de propiedades que se
+              adaptan a tus necesidades y estilo de vida. Desde encantadoras
+              casas familiares hasta modernos apartamentos en el corazón de la
+              ciudad, nuestro equipo está dedicado a ayudarte a encontrar la
+              propiedad perfecta que cumpla con tus expectativas y requisitos.
+            </p>
+          </div>
+          <div class="contactos">
+            <div class="iconos_contac">
+              <div class="iconos_contac2">
+                <img src="img/icons8-teléfono-desconectado-50.png" alt="" />
+                <div class="texto_contact">
+                  <h1>Llama aquí!</h1>
+                  <p>829-912-9914</p>
+                </div>
+              </div>
+
+              <div class="iconos_contac2">
+                <img src="img/icons8-marcador-de-mapa-64.png" alt="" />
+                <div class="texto_contact">
+                  <p>Av. Circunvalación Nte., Santiago de los Caballeros</p>
+                </div>
+              </div>
+            </div>
+            <div class="iconos_contac">
+              <div class="iconos_contac2">
+                <img src="img/icons8-preguntas-60.png" alt="" />
+                <div class="texto_contact">
+                  <h1>¿Tienes alguna pregunta?</h1>
+                  <a href="https://mail.google.com/mail/u/0/#inbox"
+                    >luisangelgamer20@gmail.com</a
+                  >
+                </div>
+              </div>
+              <div class="iconos_contac2">
+                <img src="img/icons8-calendario-50.png" alt="" />
+                <div class="texto_contact">
+                  <h1>Lunes----Viernes</h1>
+                  <p>9:00 AM---6:00 PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="derecha_contact">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120381.7638242817!2d-70.68502649723044!3d19.45857947368561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eb1c5c838e5899f%3A0x75d4b059b8768429!2sSantiago%20de%20los%20Caballeros!5e0!3m2!1ses-419!2sdo!4v1711655034543!5m2!1ses-419!2sdo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+
+       <div class="title">
+         <h2 class="titulo">Formulario de contacto</h2>
+         <div class="linea"></div>
+       </div>
+    <div class="contenedor_form1" id="formulario-contacto" >
+      <form class="formulario-contacto" onsubmit="validacionContact(event)" id="formContact">
+         
+        <div class="contenedor_form">
+          <div class="campo">
+            
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+            <input type="email" id="correo" name="correo" placeholder="Tu correo electrónico">
+            <input type="tel" id="telefono" name="telefono" placeholder="Tu número de teléfono">
+          </div>
+          <div class="campo1">
+            <textarea id="mensaje" name="mensaje" placeholder="Tu mensaje"></textarea>
+            <div class="campo1" >
+              <button type="submit">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+
+
+    <footer>
+      <div class="footerContainer">
+        <div class="socialIcons">
+          <a href=""><i class="fa-brands fa-facebook"></i></a>
+          <a href=""><i class="fa-brands fa-instagram"></i></a>
+          <a href=""><i class="fa-brands fa-twitter"></i></a>
+          <a href=""><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="footerNav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Destacados</a></li>
+            <li><a href="index.html">Quienes somos</a></li>
+            <li><a href="Productos.html">Productos</a></li>
+            <li><a href="Contactos.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footerBottom">
+        <p>
+          Copyright &copy;2024; Diseñado por
+          <span class="designer">Luisangel Ramirez</span>
+        </p>
+      </div>
+    </footer>
+    <script src="js/js_contactos.js"></script>
+  </body>
+</html>

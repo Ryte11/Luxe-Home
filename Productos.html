@@ -1,0 +1,2661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" type="text/css"href="Fuentes/Inter-VariableFont_slnt,wght.ttf"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Products</title>
+</head>
+<body>
+
+    <header class="header">
+      <div class="menu">
+        <div class="logo" data-aos="fade-right" data-aos-duration="1400">
+          <a href="#">
+            <div class="logo_back">
+              <img src="img/icons8-casa-26.png" alt="" />
+            </div>
+            <h1>Luxe Home</h1>
+          </a>
+        </div>
+       
+        <nav class="nav" data-aos="fade-down" data-aos-duration="1400" id="ul">
+          <ul class="menu" id="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Productos.html">Products</a></li>
+            <li><a href="#seccion1">Destacados</a></li>
+            <li><a href="#seccion2">¿Quienes somos?</a></li>
+            <li><a href="Contactos.html">Contact US</a></li>
+          </ul>
+        </nav>
+
+        <div class="iconos" data-aos="fade-left" data-aos-duration="1400">
+          <div class="like" onclick="abrirCarrito()">
+            <span class="like-button" id="like-button">0</span>
+            <button>
+              <img src="img/icons8-me-gusta-24.png" alt="" class="icon1" />
+            </button>
+          </div>
+          <div class="profile" onclick="mostrarFormulario()">
+            <button>
+              <img src="img/icons8-usuario-50.png" alt="" class="icon2" />
+            </button>
+          </div>
+          
+          <button id="abrir" class="abrir-menu" onclick="menuAbrir()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+              <path widht="80px" fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+            </svg>
+          </button>
+          
+       
+        </div>
+      </div>
+      </header>
+    
+      
+    </div>
+
+    <!-- Menu desplegable  -->
+    <div class="over" id="over"></div>
+    <div id="carrito1" class="carrito1">
+        <div class="arriba_text1">
+            <img src="img/icons8-x-50.png" alt="" onclick="MenuCerrar()">
+        </div>
+        <nav class="nav1" data-aos="fade-down" data-aos-duration="1400" id="ul">
+         <ul class="menu1" id="menu">
+           <li><a href="index.html">Home</a></li>
+           <li><a href="Productos.html">Products</a></li>
+           <li><a href="#seccion1">Destacados</a></li>
+           <li><a href="index.html">¿Quienes somos?</a></li>
+           <li><a href="Contactos.html">Contact US</a></li>
+         </ul>
+       </nav>
+    </div>
+
+    <!-- Carrito de compras -->
+  <div class="over" id="over"></div>
+  <div id="carrito" class="carrito">
+      <div class="arriba_text">
+          <h1>Carrito de Compras</h1>
+          <img src="img/icons8-multiply-50.png" alt="" onclick="cerrarCarrito()">
+      </div>
+      <div class="carrito-items1">
+          <div class="carrito_text">
+              <h3>Imagen</h3>
+              <h3>Nombre</h3>
+              <h3>Precio</h3>
+              <div></div>
+          </div>
+          <div class="linea3"></div>
+      </div>
+      <div id="carrito-items" class="carrito-items">
+
+      </div>
+
+      <div class="botones">
+          <div id="total" class="total">Total: $<span id="total-precio">0</span></div>
+          
+            <button onclick="compra()">Comprar</button>
+            <button onclick="limpiar()">Limpiar Carrito</button>
+      </div>
+  </div>
+    
+
+  <div class="over" id="over"></div>
+  <div class="form-box" id="formBox">
+    <form class="form" onsubmit="return validacion(event)" id="form">
+        <span class="title">Sign up</span>
+        <span class="subtitle">Crea una cuenta gratuita con tu email.</span>
+        <div class="form-container">
+          <input type="text" class="input1" placeholder="Nombre Completo" id="name">
+          <input type="email" class="input1" placeholder="Email" id="email">
+          <input type="password" class="input1" placeholder="Password" id="password">
+        </div>
+        <button type="submit">Sign up</button>
+    </form>
+    <div class="form-section">
+      <p>Ya tienes una cuenta? <button onclick="mostrarFormulario1()">Inicia sesión</button> </p>
+    </div>
+  </div>
+
+  <div class="form-box" id="formBox1">
+    <form class="form" onsubmit="return validacion1(event)" id="form1">
+        <span class="title">Log in</span>
+        <span class="subtitle">Inicia seccion con tu cuenta.</span>
+        <div class="form-container">
+          <input type="email" class="input1" placeholder="Email" id="email1">
+          <input type="password" class="input1" placeholder="Password" id="password1">
+        </div>
+        <button type="submit">Log In</button>
+    </form>
+  </div>
+    <div class="text_catalogo" data-aos="fade-up" data-aos-duration="1300">
+        <h1>Explora nuestro catalogo</h1>
+        <div class="linea"></div>
+        <p>Explora todos los diferentes tipos de apartamentos para que puedas elegir la mejor opción para ti.
+        </p>
+    </div>
+
+    <div class="contenedor_catalogo">
+      <div class="centro_catalogo">
+          <div class="angry-grid">
+              <div id="item-0" class="item-imagen"  onclick="cambiar_productos(titulo)">
+                <div class="overlay">
+                  <div class="texto-img">
+                    <div class="tittle-img">
+                      <h1 >Houses</h1>
+                      <div class="arrow-1">
+                        <div class="arrow"></div>
+                      </div>
+                    </div>
+                    <p>12 Propiedades</p>
+                </div>
+                </div>
+                
+                
+              </div>
+              <div id="item-1" class="item-imagen"onclick="cambiar_productos(titulo)">
+                <div class="overlay1">
+                  <div class="texto-img">
+                    <div class="tittle-img">
+                      <h1>Villas</h1>
+                      <div class="arrow-1">
+                        <div class="arrow"></div>
+                      </div>
+                    </div>
+                    <p>10 Propiedades</p>
+                </div>
+                </div>
+              
+              </div>
+              <div id="item-2" class="item-imagen" onclick="cambiar_productos(titulo)">
+                <div class="overlay2">
+                  <div class="texto-img">
+                    <div class="tittle-img">
+                      <h1>Apartamentos</h1>
+                      <div class="arrow-1">
+                        <div class="arrow"></div>
+                      </div>
+                    </div>
+                    <p>8 Propiedades</p>
+                  </div>
+                </div>
+              </div>
+              <div id="item-3" class="item-imagen" onclick="cambiar_productos(titulo)">
+                <div class="overlay3">
+                  <div class="texto-img">
+                    <div class="tittle-img">
+                      <h1>Alquileres</h1>
+                      <div class="arrow-1">
+                        <div class="arrow"></div>
+                      </div>
+                    </div>
+                    <p>20 Propiedades</p>
+                  </div>
+                </div>
+              </div>
+              <div id="item-4" class="item-imagen" onclick="cambiar_productos(titulo)">
+                <div class="overlay4">
+                  <div class="texto-img">
+                    <div class="tittle-img">
+                      <h1>Ventas</h1>
+                      <div class="arrow-1">
+                        <div class="arrow"></div>
+                      </div>
+                    </div>
+                    <p>6 Propiedades</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      
+    </div> 
+    
+    <!-- vistas de procuctos -->
+
+  <!-- vermas 1 -->
+  <div class="over1" id="overlay"></div>
+  <div class="ver_mas" id="ver_mas">
+   
+      <div class="info-carta_verMas" id="articulo" data-tipo="Villas-Rentas">
+        <div class="venta1VerMas">
+          <h3>Rentar</h3>
+          
+        </div>
+        <div  class="carrusel">
+          <img src="img/Fondo1.jpg" alt="" class="img-cartaVerMas" id="img1"/>
+          <img src="img/Fondo2.jpg" alt="" class="img-cartaVerMas" id="img2" />
+          <img src="img/Fondo3.jpg" alt="" class="img-cartaVerMas" id="img3" />
+          
+        </div>
+          <button id="prev"><i class="fas fa-chevron-left"></i></button>
+          <button id="next"><i class="fas fa-chevron-right"></i></button>
+        <div class="contenedor-tetxVerMas">
+          <div class="x">
+            <h3 class="title-desVerMas">Luxury Puerto Bahia Villa/Samaná</h3>
+            <img src="img/icons8-multiply-50.png" alt="" onclick="vermas2()">
+          </div>
+          <p class="subtitle-VerMas">En Samaná, una villa lujosa frente al mar Caribe. Espacios elegantes, terrazas amplias y piscinas infinitas. Un refugio de sofisticación y tranquilidad. </p>
+          <div class="centrar">
+            <div class="linea5"></div>
+          </div>
+          <div class="info-iconVerMas">
+            <img src="img/cama2.png" alt="" />
+            <p>4 Rooms</p>
+
+            <img src="img/Bañera.png" alt="" />
+            <p>6 BathRooms</p>
+          </div>
+          <div class="info-icon">
+            <img src="img/Garage.png" alt="" />
+            <p>5 Garage</p>
+
+            <img src="img/pool.png" alt="" />
+            <p>Pool</p>
+          </div>
+          <div class="centrar">
+            <div class="linea5"></div>
+          </div>
+          <div class="priceVerMas">
+            <div class="boton-compraVErmas">
+              <div class="eye-icon">
+                <h3>$500/Noche</h3>
+              </div>
+              <a href="formulario_compra.html">
+                <button>Rentar</button>
+               </a >
+              
+            </div>
+            <div class="contenedor-icons1VerMas">
+              
+              <div class="heart-container" title="Like">
+                <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Fondo1.jpg','Villa', 500)"/>
+                <div class="svg-container">
+                  <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                  </svg>
+                  <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+
+  <!--  ver mas 2 -->
+
+  <div class="overlay" id="overlay"></div>
+  <div class="ver_mas" id="ver_mas1">
+   
+      <div class="info-carta_verMas" id="articulo" data-tipo="Villas-Rentas">
+        <div class="venta1VerMas">
+          <h3>Rentar</h3>
+          
+        </div>
+        <div class="carrusel">
+          <img src="img/Fondo2.jpg" alt="" class="img-cartaVerMas" id="img1"/>
+          <img src="img/Fondo3.jpg" alt="" class="img-cartaVerMas" id="img2" />
+          <img src="img/Fondo4.jpg" alt="" class="img-cartaVerMas" id="img3" />
+          
+        </div>
+          <button id="prev"><i class="fas fa-chevron-left"></i></button>
+          <button id="next"><i class="fas fa-chevron-right"></i></button>
+        <div class="contenedor-tetxVerMas">
+          <div class="x">
+            <h3 class="title-desVerMas">Beautiful Luxury House/Punta Cana Villa</h3>
+            <img src="img/icons8-multiply-50.png" alt="" onclick="vermas4()">
+          </div>
+          <p class="subtitle-VerMas">Experimenta el encanto incomparable de nuestra Beautiful Luxury House en Punta Cana. Sumérgete en el lujo y la elegancia de esta villa excepcional, donde cada detalle ha sido cuidadosamente diseñado para ofrecerte una experiencia inolvidable en el paraíso. </p>
+          <div class="centrar">
+            <div class="linea5"></div>
+          </div>
+          <div class="info-iconVerMas">
+            <img src="img/cama2.png" alt="" />
+            <p>5 Rooms</p>
+
+            <img src="img/Bañera.png" alt="" />
+            <p>4 BathRooms</p>
+          </div>
+          <div class="info-icon">
+            <img src="img/Garage.png" alt="" />
+            <p>4 Garage</p>
+
+            <img src="img/Garden.png" alt="" />
+            <p>Big Garden</p>
+          </div>
+          <div class="centrar">
+            <div class="linea5"></div>
+          </div>
+          <div class="priceVerMas">
+            <div class="boton-compraVErmas">
+              <div class="eye-icon">
+                <h3>$420/Noche</h3>
+              </div>
+              <a href="formulario_compra.html">
+                <button>Rentar</button>
+               </a >
+              
+            </div>
+            <div class="contenedor-icons1VerMas">
+              
+              <div class="heart-container" title="Like">
+                <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Fondo1.jpg','Villa', 500)"/>
+                <div class="svg-container">
+                  <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                  </svg>
+                  <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+  <!-- ver mas 3 -->
+
+
+  <div class="over1" id="overlay"></div>
+  <div class="ver_mas" id="ver_mas2">
+   
+      <div class="info-carta_verMas" id="articulo" data-tipo="Villas-Rentas">
+        <div class="venta1VerMas">
+          <h3>Rentar</h3>
+          
+        </div>
+        <div class="carrusel">
+          <img src="img/Fondo5.jpg" alt="" class="img-cartaVerMas" id="img1"/>
+          <img src="img/Fondo3.jpg" alt="" class="img-cartaVerMas" id="img2" />
+          <img src="img/Fondo4.jpg" alt="" class="img-cartaVerMas" id="img3" />
+          
+        </div>
+          <button id="prev"><i class="fas fa-chevron-left"></i></button>
+          <button id="next"><i class="fas fa-chevron-right"></i></button>
+        <div class="contenedor-tetxVerMas">
+          <div class="x">
+            <h3 class="title-desVerMas">Las Terrenas Front Beach And Garden Villa</h3>
+            <img src="img/icons8-multiply-50.png" alt="" onclick="vermas6()">
+          </div>
+          <p class="subtitle-VerMas">Descubre la serenidad y el lujo de Las Terrenas Front Beach And Garden Villa, una residencia exclusiva que combina la belleza natural de la playa con la exuberancia de sus jardines.  </p>
+          <div class="centrar">
+            <div class="linea5"></div>
+          </div>
+          <div class="info-iconVerMas">
+            <img src="img/cama2.png" alt="" />
+            <p>5 Rooms</p>
+
+            <img src="img/Bañera.png" alt="" />
+            <p>4 BathRooms</p>
+          </div>
+          <div class="info-icon">
+            <img src="img/Garage.png" alt="" />
+            <p>4 Garage</p>
+
+            <img src="img/Garden.png" alt="" />
+            <p>Big Garden</p>
+          </div>
+          <div class="centrar">
+            <div class="linea5"></div>
+          </div>
+          <div class="priceVerMas">
+            <div class="boton-compraVErmas">
+              <div class="eye-icon">
+                <h3>$300/Noche</h3>
+              </div>
+              <a href="formulario_compra.html">
+                <button>Rentar</button>
+               </a >
+              
+            </div>
+            <div class="contenedor-icons1VerMas">
+              
+              <div class="heart-container" title="Like">
+                <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Fondo1.jpg','Villa', 500)"/>
+                <div class="svg-container">
+                  <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                  </svg>
+                  <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+   <!-- ver mas 4 -->
+
+
+   <div class="over1" id="overlay"></div>
+   <div class="ver_mas" id="ver_mas3">
+    
+       <div class="info-carta_verMas" id="articulo" data-tipo="Villas-Rentas">
+         <div class="venta1VerMas">
+           <h3>Rentar</h3>
+           
+         </div>
+         <div class="carrusel">
+           <img src="img/Fondo3.jpg" alt="" class="img-cartaVerMas" id="img1"/>
+           <img src="img/Fondo3.jpg" alt="" class="img-cartaVerMas" id="img2" />
+           <img src="img/Fondo4.jpg" alt="" class="img-cartaVerMas" id="img3" />
+           
+         </div>
+           <button id="prev"><i class="fas fa-chevron-left"></i></button>
+           <button id="next"><i class="fas fa-chevron-right"></i></button>
+         <div class="contenedor-tetxVerMas">
+           <div class="x">
+             <h3 class="title-desVerMas">Villa Lujosa Moderna/Cabrerá</h3>
+             <img src="img/icons8-multiply-50.png" alt="" onclick="vermas8()">
+           </div>
+           <p class="subtitle-VerMas">Explora el encanto moderno y la elegancia de nuestra Villa Lujosa en Cabrerá. Sumérgete en un oasis de lujo y comodidad, donde el diseño contemporáneo se combina con la belleza natural de su entorno.  </p>
+           <div class="centrar">
+             <div class="linea5"></div>
+           </div>
+           <div class="info-iconVerMas">
+             <img src="img/cama2.png" alt="" />
+             <p>4 Rooms</p>
+ 
+             <img src="img/Bañera.png" alt="" />
+             <p>3.5 BathRooms</p>
+           </div>
+           <div class="info-icon">
+             <img src="img/Garage.png" alt="" />
+             <p>Gran Atico</p>
+ 
+             <img src="img/pool.png" alt="" />
+             <p>Big Pool</p>
+           </div>
+           <div class="centrar">
+             <div class="linea5"></div>
+           </div>
+           <div class="priceVerMas">
+             <div class="boton-compraVErmas">
+               <div class="eye-icon">
+                 <h3>$450/Noche</h3>
+               </div>
+               <a href="formulario_compra.html">
+                <button>Rentar</button>
+               </a >
+               
+             </div>
+             <div class="contenedor-icons1VerMas">
+               
+               <div class="heart-container" title="Like">
+                 <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Fondo1.jpg','Villa', 500)"/>
+                 <div class="svg-container">
+                   <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                   </svg>
+                   <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                     ></path>
+                   </svg>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+   </div>
+
+
+
+   <!-- ver mas 5 -->
+
+
+   <div class="over1" id="overlay"></div>
+   <div class="ver_mas" id="ver_mas4">
+    
+       <div class="info-carta_verMas" id="articulo" data-tipo="Villas-Rentas">
+         <div class="venta1VerMas">
+           <h3>Venta</h3>
+           
+         </div>
+         <div class="carrusel">
+           <img src="img/Apartment_1.jpg" alt="" class="img-cartaVerMas" id="img1"/>
+           <img src="img/Fondo3.jpg" alt="" class="img-cartaVerMas" id="img2" />
+           <img src="img/Fondo4.jpg" alt="" class="img-cartaVerMas" id="img3" />
+           
+         </div>
+           <button id="prev"><i class="fas fa-chevron-left"></i></button>
+           <button id="next"><i class="fas fa-chevron-right"></i></button>
+         <div class="contenedor-tetxVerMas">
+           <div class="x">
+             <h3 class="title-desVerMas">Apartamento Lujoso en el corazon del país</h3>
+             <img src="img/icons8-multiply-50.png" alt="" onclick="vermas10()">
+           </div>
+           <p class="subtitle-VerMas">Descubre el lujo en nuestro Apartamento Lujoso, en el corazón del país. Experimenta comodidad y elegancia en un solo lugar.</p>
+           <div class="centrar">
+             <div class="linea5"></div>
+           </div>
+           <div class="info-iconVerMas">
+             <img src="img/cama2.png" alt="" />
+             <p>4 Rooms</p>
+ 
+             <img src="img/Bañera.png" alt="" />
+             <p>3.5 BathRooms</p>
+           </div>
+           <div class="info-icon">
+             <img src="img/Garage.png" alt="" />
+             <p>4 Garage</p>
+ 
+             <img src="img/pool.png" alt="" />
+             <p>jacuzzi</p>
+           </div>
+           <div class="centrar">
+             <div class="linea5"></div>
+           </div>
+           <div class="priceVerMas">
+             <div class="boton-compraVErmas">
+               <div class="eye-icon">
+                 <h3>$550,000</h3>
+               </div>
+               <a href="formulario_compra.html">
+                <button>Comprar</button>
+               </a >
+               
+             </div>
+             <div class="contenedor-icons1VerMas">
+               
+               <div class="heart-container" title="Like">
+                 <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Fondo1.jpg','Villa', 500)"/>
+                 <div class="svg-container">
+                   <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                   </svg>
+                   <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                     ></path>
+                   </svg>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+   </div>
+
+
+
+   <!-- ver mas 5 -->
+
+
+   <div class="over1" id="overlay"></div>
+   <div class="ver_mas" id="ver_mas5">
+    
+       <div class="info-carta_verMas" id="articulo" data-tipo="Villas-Rentas">
+         <div class="venta1VerMas">
+           <h3>Rentar</h3>
+           
+         </div>
+         <div class="carrusel">
+           <img src="img/Apartamento_2.jpg" alt="" class="img-cartaVerMas" id="img1"/>
+           <img src="img/Fondo3.jpg" alt="" class="img-cartaVerMas" id="img2" />
+           <img src="img/Fondo4.jpg" alt="" class="img-cartaVerMas" id="img3" />
+           
+         </div>
+           <button id="prev"><i class="fas fa-chevron-left"></i></button>
+           <button id="next"><i class="fas fa-chevron-right"></i></button>
+         <div class="contenedor-tetxVerMas">
+           <div class="x">
+             <h3 class="title-desVerMas">Lujoso Residencial en Bella vista #3</h3>
+             <img src="img/icons8-multiply-50.png" alt="" onclick="vermas12()">
+           </div>
+           <p class="subtitle-VerMas">Explora el encanto del Lujoso Residencial en Bella Vista #3. Sumérgete en un ambiente de lujo y comodidad, donde cada detalle está diseñado para ofrecerte una experiencia única.</p>
+           <div class="centrar">
+             <div class="linea5"></div>
+           </div>
+           <div class="info-iconVerMas">
+             <img src="img/cama2.png" alt="" />
+             <p>3 Rooms</p>
+ 
+             <img src="img/Bañera.png" alt="" />
+             <p>3 BathRooms</p>
+           </div>
+           <div class="info-icon">
+             <img src="img/Garage.png" alt="" />
+             <p>3 Garage</p>
+ 
+             <img src="img/Garden.png" alt="" />
+             <p>Big Social Area</p>
+           </div>
+           <div class="centrar">
+             <div class="linea5"></div>
+           </div>
+           <div class="priceVerMas">
+             <div class="boton-compraVErmas">
+               <div class="eye-icon">
+                 <h3>$1,000/Mes</h3>
+               </div>
+               <a href="formulario_compra.html">
+                <button>Rentar</button>
+               </a >
+               
+             </div>
+             <div class="contenedor-icons1VerMas">
+               
+               <div class="heart-container" title="Like">
+                 <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Fondo1.jpg','Villa', 500)"/>
+                 <div class="svg-container">
+                   <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                   </svg>
+                   <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                     ></path>
+                   </svg>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+   </div>
+
+   <!-- ver mas 6 -->
+
+
+   <div class="over1" id="overlay"></div>
+   <div class="ver_mas" id="ver_mas6">
+    
+       <div class="info-carta_verMas" id="articulo" data-tipo="Villas-Rentas">
+         <div class="venta1VerMas">
+           <h3>Venta</h3>
+           
+         </div>
+         <div class="carrusel">
+           <img src="img/Casa_de_campo.jpg" alt="" class="img-cartaVerMas" id="img1"/>
+           <img src="img/Fondo3.jpg" alt="" class="img-cartaVerMas" id="img2" />
+           <img src="img/Fondo4.jpg" alt="" class="img-cartaVerMas" id="img3" />
+           
+         </div>
+           <button id="prev"><i class="fas fa-chevron-left"></i></button>
+           <button id="next"><i class="fas fa-chevron-right"></i></button>
+         <div class="contenedor-tetxVerMas">
+           <div class="x">
+             <h3 class="title-desVerMas">Casa de campo en jarabacoa cerca del salto de los Monjes</h3>
+             <img src="img/icons8-multiply-50.png" alt="" onclick="vermas14()">
+           </div>
+           <p class="subtitle-VerMas">Descubre el encanto rústico de nuestra Casa de Campo cerca del Salto de los Monjes en Jarabacoa. Sumérgete en la serenidad de la naturaleza.</p>
+           <div class="centrar">
+             <div class="linea5"></div>
+           </div>
+           <div class="info-iconVerMas">
+             <img src="img/cama2.png" alt="" />
+             <p>3 Rooms</p>
+ 
+             <img src="img/Bañera.png" alt="" />
+             <p>2 BathRooms</p>
+           </div>
+           <div class="info-icon">
+             <img src="img/Garage.png" alt="" />
+             <p>2 Garage</p>
+ 
+             <img src="img/Garden.png" alt="" />
+             <p>Big Garden</p>
+           </div>
+           <div class="centrar">
+             <div class="linea5"></div>
+           </div>
+           <div class="priceVerMas">
+             <div class="boton-compraVErmas">
+               <div class="eye-icon">
+                 <h3>$80,000</h3>
+               </div>
+               <a href="formulario_compra.html">
+                <button>Venta</button>
+               </a >
+               
+             </div>
+             <div class="contenedor-icons1VerMas">
+               
+               <div class="heart-container" title="Like">
+                 <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Fondo1.jpg','Villa', 500)"/>
+                 <div class="svg-container">
+                   <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                   </svg>
+                   <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                     ></path>
+                   </svg>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+   </div>
+
+
+   <!-- ver mas 7 -->
+
+
+   <div class="over1" id="overlay"></div>
+   <div class="ver_mas" id="ver_mas7">
+    
+       <div class="info-carta_verMas" id="articulo" data-tipo="Villas-Rentas">
+         <div class="venta1VerMas">
+           <h3>Rentar</h3>
+           
+         </div>
+         <div class="carrusel">
+           <img src="img/Fondo4.jpg" alt="" class="img-cartaVerMas" id="img1"/>
+           <img src="img/Fondo3.jpg" alt="" class="img-cartaVerMas" id="img2" />
+           <img src="img/Fondo4.jpg" alt="" class="img-cartaVerMas" id="img3" />
+           
+         </div>
+           <button id="prev"><i class="fas fa-chevron-left"></i></button>
+           <button id="next"><i class="fas fa-chevron-right"></i></button>
+         <div class="contenedor-tetxVerMas">
+           <div class="x">
+             <h3 class="title-desVerMas">Casa lujosa y moderna en santiago</h3>
+             <img src="img/icons8-multiply-50.png" alt="" onclick="vermas16()">
+           </div>
+           <p class="subtitle-VerMas">Explora la elegancia contemporánea en nuestra Casa Lujosa y Moderna en Santiago. Sumérgete en el lujo de un hogar que combina estilo y comodidad.</p>
+           <div class="centrar">
+             <div class="linea5"></div>
+           </div>
+           <div class="info-iconVerMas">
+             <img src="img/cama2.png" alt="" />
+             <p>4 Rooms</p>
+ 
+             <img src="img/Bañera.png" alt="" />
+             <p>3.5 BathRooms</p>
+           </div>
+           <div class="info-icon">
+             <img src="img/Garage.png" alt="" />
+             <p>Gran Atico</p>
+ 
+             <img src="img/pool.png" alt="" />
+             <p>Big Pool</p>
+           </div>
+           <div class="centrar">
+             <div class="linea5"></div>
+           </div>
+           <div class="priceVerMas">
+             <div class="boton-compraVErmas">
+               <div class="eye-icon">
+                 <h3>$1,000/Mes</h3>
+               </div>
+               <a href="formulario_compra.html">
+                <button>Rentar</button>
+               </a >
+               
+             </div>
+             <div class="contenedor-icons1VerMas">
+               
+               <div class="heart-container" title="Like">
+                 <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Fondo1.jpg','Villa', 500)"/>
+                 <div class="svg-container">
+                   <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                   </svg>
+                   <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                     ></path>
+                   </svg>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+   </div>
+
+
+
+   <!-- ver mas 8 -->
+
+
+   <div class="over1" id="overlay"></div>
+   <div class="ver_mas" id="ver_mas8">
+    
+       <div class="info-carta_verMas" id="articulo" data-tipo="Villas-Rentas">
+         <div class="venta1VerMas">
+           <h3>Venta</h3>
+           
+         </div>
+         <div class="carrusel">
+           <img src="img/Apartamento_2.jpeg" alt="" class="img-cartaVerMas" id="img1"/>
+           <img src="img/Fondo3.jpg" alt="" class="img-cartaVerMas" id="img2" />
+           <img src="img/Fondo4.jpg" alt="" class="img-cartaVerMas" id="img3" />
+           
+         </div>
+           <button id="prev"><i class="fas fa-chevron-left"></i></button>
+           <button id="next"><i class="fas fa-chevron-right"></i></button>
+         <div class="contenedor-tetxVerMas">
+           <div class="x">
+             <h3 class="title-desVerMas">Gran Torre con Helipuerto y Area social</h3>
+             <img src="img/icons8-multiply-50.png" alt="" onclick="vermas18()">
+           </div>
+           <p class="subtitle-VerMas">"Gran Torre con Helipuerto y Área Social" combina lujo y funcionalidad en un edificio moderno y elegante. Con su helipuerto privado y un área social exquisita.</p>
+           <div class="centrar">
+             <div class="linea5"></div>
+           </div>
+           <div class="info-iconVerMas">
+             <img src="img/cama2.png" alt="" />
+             <p>4 Rooms</p>
+ 
+             <img src="img/Bañera.png" alt="" />
+             <p>3.5 BathRooms</p>
+           </div>
+           <div class="info-icon">
+             <img src="img/icons8-helicóptero-50.png" alt="" />
+             <p>Helipuerto</p>
+ 
+             <img src="img/pool.png" alt="" />
+             <p>jacuzzi</p>
+           </div>
+           <div class="centrar">
+             <div class="linea5"></div>
+           </div>
+           <div class="priceVerMas">
+             <div class="boton-compraVErmas">
+               <div class="eye-icon">
+                 <h3>$185,000</h3>
+               </div>
+               <a href="formulario_compra.html">
+                <button>Venta</button>
+               </a >
+               
+             </div>
+             <div class="contenedor-icons1VerMas">
+               
+               <div class="heart-container" title="Like">
+                 <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Fondo1.jpg','Villa', 500)"/>
+                 <div class="svg-container">
+                   <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                   </svg>
+                   <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                     ></path>
+                   </svg>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+   </div>
+
+
+   <!-- ver mas 9 -->
+
+
+   <div class="over1" id="overlay"></div>
+   <div class="ver_mas" id="ver_mas9">
+    
+       <div class="info-carta_verMas" id="articulo" data-tipo="Villas-Rentas">
+         <div class="venta1VerMas">
+           <h3>Venta</h3>
+           
+         </div>
+         <div class="carrusel">
+           <img src="img/Apartamento_3.jpeg" alt="" class="img-cartaVerMas" id="img1"/>
+           <img src="img/Fondo3.jpg" alt="" class="img-cartaVerMas" id="img2" />
+           <img src="img/Fondo4.jpg" alt="" class="img-cartaVerMas" id="img3" />
+           
+         </div>
+           <button id="prev"><i class="fas fa-chevron-left"></i></button>
+           <button id="next"><i class="fas fa-chevron-right"></i></button>
+         <div class="contenedor-tetxVerMas">
+           <div class="x">
+             <h3 class="title-desVerMas">Torre Lujosa ubicada en Bella vista</h3>
+             <img src="img/icons8-multiply-50.png" alt="" onclick="vermas20()">
+           </div>
+           <p class="subtitle-VerMas">La "Torre Lujosa ubicada en Bella Vista" es un ícono de elegancia y exclusividad en el corazón de la ciudad. Con su diseño moderno y acabados de primera calidad.</p>
+           <div class="centrar">
+             <div class="linea5"></div>
+           </div>
+           <div class="info-iconVerMas">
+             <img src="img/cama2.png" alt="" />
+             <p>3 Rooms</p>
+ 
+             <img src="img/Bañera.png" alt="" />
+             <p>2 BathRooms</p>
+           </div>
+           <div class="info-icon">
+             <img src="img/Garage.png" alt="" />
+             <p>2 Garage</p>
+ 
+             <img src="img/Garden.png" alt="" />
+             <p>Big Garden</p>
+           </div>
+           <div class="centrar">
+             <div class="linea5"></div>
+           </div>
+           <div class="priceVerMas">
+             <div class="boton-compraVErmas">
+               <div class="eye-icon">
+                 <h3>$300,000</h3>
+               </div>
+               <a href="formulario_compra.html">
+                <button>Venta</button>
+               </a >
+               
+             </div>
+             <div class="contenedor-icons1VerMas">
+               
+               <div class="heart-container" title="Like">
+                 <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Fondo1.jpg','Villa', 500)"/>
+                 <div class="svg-container">
+                   <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                   </svg>
+                   <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                     ></path>
+                   </svg>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+   </div>
+
+    <!-- ver mas 10 -->
+
+
+    <div class="over1" id="overlay"></div>
+    <div class="ver_mas" id="ver_mas10">
+     
+        <div class="info-carta_verMas" id="articulo" data-tipo="Villas-Rentas">
+          <div class="venta1VerMas">
+            <h3>Venta</h3>
+            
+          </div>
+          <div class="carrusel">
+            <img src="img/House_contact.jpg" alt="" class="img-cartaVerMas" id="img1"/>
+            <img src="img/Fondo3.jpg" alt="" class="img-cartaVerMas" id="img2" />
+            <img src="img/Fondo4.jpg" alt="" class="img-cartaVerMas" id="img3" />
+            
+          </div>
+            <button id="prev"><i class="fas fa-chevron-left"></i></button>
+            <button id="next"><i class="fas fa-chevron-right"></i></button>
+          <div class="contenedor-tetxVerMas">
+            <div class="x">
+              <h3 class="title-desVerMas">Casa lujosa de 3 pisos en Bella vista</h3>
+              <img src="img/icons8-multiply-50.png" alt="" onclick="vermas22()">
+            </div>
+            <p class="subtitle-VerMas">La "Casa lujosa de 3 pisos en Bella Vista" es un impresionante ejemplo de elegancia y confort en una de las zonas más exclusivas de la ciudad. </p>
+            <div class="centrar">
+              <div class="linea5"></div>
+            </div>
+            <div class="info-iconVerMas">
+              <img src="img/cama2.png" alt="" />
+              <p>4 Rooms</p>
+  
+              <img src="img/Bañera.png" alt="" />
+              <p>3.5 BathRooms</p>
+            </div>
+            <div class="info-icon">
+              <img src="img/Garage.png" alt="" />
+              <p>4 Garage</p>
+  
+              <img src="img/Garden.png" alt="" />
+              <p>Big Garden</p>
+            </div>
+            <div class="centrar">
+              <div class="linea5"></div>
+            </div>
+            <div class="priceVerMas">
+              <div class="boton-compraVErmas">
+                <div class="eye-icon">
+                  <h3>$280,000</h3>
+                </div>
+                <a href="formulario_compra.html">
+                 <button>Venta</button>
+                </a >
+                
+              </div>
+              <div class="contenedor-icons1VerMas">
+                
+                <div class="heart-container" title="Like">
+                  <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Fondo1.jpg','Villa', 500)"/>
+                  <div class="svg-container">
+                    <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                    </svg>
+                    <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+     <!-- ver mas 11 -->
+
+
+     <div class="over1" id="overlay"></div>
+     <div class="ver_mas" id="ver_mas11">
+      
+         <div class="info-carta_verMas" id="articulo" data-tipo="Villas-Rentas">
+           <div class="venta1VerMas">
+             <h3>Venta</h3>
+             
+           </div>
+           <div class="carrusel">
+             <img src="img/Casa_1.jpeg" alt="" class="img-cartaVerMas" id="img1"/>
+             <img src="img/Fondo3.jpg" alt="" class="img-cartaVerMas" id="img2" />
+             <img src="img/Fondo4.jpg" alt="" class="img-cartaVerMas" id="img3" />
+             
+           </div>
+             <button id="prev"><i class="fas fa-chevron-left"></i></button>
+             <button id="next"><i class="fas fa-chevron-right"></i></button>
+           <div class="contenedor-tetxVerMas">
+             <div class="x">
+               <h3 class="title-desVerMas">Gran casa en la Avenida San Isidro Std.Este</h3>
+               <img src="img/icons8-multiply-50.png" alt="" onclick="vermas24()">
+             </div>
+             <p class="subtitle-VerMas">La "Gran casa en la Avenida San Isidro Std. Este" es una impresionante residencia que se destaca en una ubicación privilegiada.  </p>
+             <div class="centrar">
+               <div class="linea5"></div>
+             </div>
+             <div class="info-iconVerMas">
+               <img src="img/cama2.png" alt="" />
+               <p>4 Rooms</p>
+   
+               <img src="img/Bañera.png" alt="" />
+               <p>3.5 BathRooms</p>
+             </div>
+             <div class="info-icon">
+               <img src="img/Garage.png" alt="" />
+               <p>4 Garage</p>
+   
+               <img src="img/pool.png" alt="" />
+               <p>Big pool</p>
+             </div>
+             <div class="centrar">
+               <div class="linea5"></div>
+             </div>
+             <div class="priceVerMas">
+               <div class="boton-compraVErmas">
+                 <div class="eye-icon">
+                   <h3>$160,000</h3>
+                 </div>
+                 <a href="formulario_compra.html">
+                  <button>Venta</button>
+                 </a >
+                 
+               </div>
+               <div class="contenedor-icons1VerMas">
+                 
+                 <div class="heart-container" title="Like">
+                   <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Fondo1.jpg','Villa', 500)"/>
+                   <div class="svg-container">
+                     <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                       <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                     </svg>
+                     <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                       <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                       ></path>
+                     </svg>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+     </div>
+
+
+
+
+    <div class="Textocatalogo" data-aos="fade-up" data-aos-duration="1300" id="seccion1">
+      <h1 id="title">Luxury Homes</h1>
+      <div class="linea"></div>
+    </div>
+  
+    <!-- Catalogo1 -->
+    <div class="catalogo" id="catalogo1">
+      <div class="cat1" id="cat1-1">
+        <div class="info-carta" id="propiedad Villas" data-operacion="Rentar" >
+          <div class="venta1">
+            <h3>Venta</h3>
+          </div>
+          <a type="button" class="img-boton"onclick="vermas13()">
+            <img src="img/Casa_de_campo.jpg" alt="" class="img-carta"
+          /></a>
+  
+          <div class="contenedor-icons">
+            <h3 class="title-des">Casa de campo en jarabacoa cerca del salto de los Monjes</h3>
+            <div class="info-icon">
+              <img src="img/cama2.png" alt="" />
+              <p>3 Rooms</p>
+  
+              <img src="img/Bañera.png" alt="" />
+              <p>2 BathRooms</p>
+            </div>
+            <div class="info-icon">
+              <img src="img/Garage.png" alt="" />
+              <p>2 Garage</p>
+  
+              <img src="img/Garden.png" alt="" />
+              <p>Big gardem</p>
+            </div>
+  
+            <div class="price">
+              <div>
+                <h3>$80,000</h3>
+              </div>
+              <div class="contenedor-icons1">
+                <div class="heart-container" title="Like">
+                  <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Casa_de_campo.jpg','House', 80000)"/>
+                  <div class="svg-container">
+                    <svg
+                      viewBox="0 0 24 24"
+                      class="svg-outline"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                      ></path>
+                    </svg>
+                    <svg
+                      viewBox="0 0 24 24"
+                      class="svg-filled"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="eye-icon">
+                  <img src="img/Ojo.png" alt="" onclick="vermas13()"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info-carta" id="propiedad Villas" data-operacion="comprar" data-tipo="casa">
+          <div class="venta1">
+            <h3>Rentar</h3>
+          </div>
+          <a type="button" class="img-boton" onclick="vermas15()">
+            <img src="img/fondo4.jpg" alt="" class="img-carta"
+          /></a>
+  
+          <div class="contenedor-icons">
+            <h3 class="title-des">Casa lujosa y moderna en santiago</h3>
+            <div class="info-icon">
+              <img src="img/cama2.png" alt="" />
+              <p>5 Rooms</p>
+  
+              <img src="img/Bañera.png" alt="" />
+              <p>4 BathRooms</p>
+            </div>
+            <div class="info-icon">
+              <img src="img/Garage.png" alt="" />
+              <p>4 Garage</p>
+  
+              <img src="img/Garden.png" alt="" />
+              <p>Big garden</p>
+            </div>
+  
+            <div class="price">
+              <div>
+                <h3>$1,000/Mes</h3>
+              </div>
+  
+              <div class="contenedor-icons1">
+                <div class="heart-container" title="Like">
+                  <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/fondo4.jpg','House', 1000)"/>
+                  <div class="svg-container">
+                    <svg
+                      viewBox="0 0 24 24"
+                      class="svg-outline"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                      ></path>
+                    </svg>
+                    <svg
+                      viewBox="0 0 24 24"
+                      class="svg-filled"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="eye-icon">
+                  <img src="img/Ojo.png" alt="" onclick="vermas15()"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cat2" id="cat2-1">
+        <div class="info-carta" id="propiedad Alquileres" data-operacion="rentar" data-tipo="villa">
+          <div class="venta1">
+            <h3>venta</h3>
+          </div>
+          <a type="button" class="img-boton" onclick="vermas21()">
+            <img src="img/House_contact.jpg" alt="" class="img-carta"
+          /></a>
+  
+          <div class="contenedor-icons">
+            <h3 class="title-des">Casa lujosa de 3 pisos en Bella vista</h3>
+            <div class="info-icon">
+              <img src="img/cama2.png" alt="" />
+              <p>4 Rooms</p>
+  
+              <img src="img/Bañera.png" alt="" />
+              <p>3.5 BathRooms</p>
+            </div>
+            <div class="info-icon">
+              <img src="img/Garage.png" alt="" />
+              <p>4 Garage</p>
+  
+              <img src="img/Garden.png" alt="" />
+              <p>Big Garden</p>
+            </div>
+  
+            <div class="price">
+              <div>
+                <h3>$280,000</h3>
+              </div>
+              <div class="contenedor-icons1">
+                <div class="heart-container" title="Like">
+                  <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/House_contact.jpg','House', 280000)"/>
+                  <div class="svg-container">
+                    <svg
+                      viewBox="0 0 24 24"
+                      class="svg-outline"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                      ></path>
+                    </svg>
+                    <svg
+                      viewBox="0 0 24 24"
+                      class="svg-filled"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="eye-icon">
+                  <img src="img/Ojo.png" alt="" onclick="vermas21()"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info-carta" id="propiedad Villa" data-operacion="comprar" data-tipo="villa">
+          <div class="venta1">
+            <h3>Venta</h3>
+          </div>
+          <a type="button" class="img-boton" onclick="vermas23()">
+            <img src="img/Casa_1.jpeg" alt="" class="img-carta" />
+          </a>
+  
+          <div class="contenedor-icons">
+            <h3 class="title-des">Gran casa en la Avenida San Isidro Std.Este</h3>
+            <div class="info-icon">
+              <img src="img/cama2.png" alt="" />
+              <p>4 Rooms</p>
+  
+              <img src="img/Bañera.png" alt="" />
+              <p>3.5 BathRooms</p>
+            </div>
+            <div class="info-icon">
+              <img src="img/Garage.png" alt="" />
+              <p>Gran Atico</p>
+  
+              <img src="img/pool.png" alt="" />
+              <p>Big Pool</p>
+            </div>
+  
+            <div class="price">
+              <div>
+                <h3>$160,000</h3>
+              </div>
+              <div class="contenedor-icons1">
+                <div class="heart-container" title="Like">
+                  <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Casa_1.jpeg','House', 160000)"/>
+                  <div class="svg-container">
+                    <svg
+                      viewBox="0 0 24 24"
+                      class="svg-outline"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                      ></path>
+                    </svg>
+                    <svg
+                      viewBox="0 0 24 24"
+                      class="svg-filled"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="eye-icon">
+                  <img src="img/Ojo.png" alt="" onclick="vermas23()"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Catalogo 2 -->
+
+      <div class="catalogo" id="catalogo2">
+        <div class="cat1">
+          <div class="info-carta" id="propiedad Apartamentos" data-operacion="comprar" data-tipo="house">
+            <div class="venta1">
+              <h3>Rentar</h3>
+            </div>
+            <a type="button" class="img-boton" onclick="vermas1()">
+              <img src="img/Fondo1.jpg" alt="" class="img-carta"/>
+            </a>
+    
+            <div class="contenedor-icons">
+              <h3 class="title-des">Luxury Puerto Bahia Villa/Samaná</h3>
+              <div class="info-icon">
+                <img src="img/cama2.png" alt="" />
+                <p>4 Rooms</p>
+    
+                <img src="img/Bañera.png" alt="" />
+                <p>6 BathRooms</p>
+              </div>
+              <div class="info-icon">
+                <img src="img/Garage.png" alt="" />
+                <p>5 Garage</p>
+    
+                <img src="img/pool.png" alt="" />
+                <p>jacuzzi</p>
+              </div>
+    
+              <div class="price">
+                <div>
+                  <h3>$500/Noche</h3>
+                </div>
+                <div class="contenedor-icons1">
+                  <div class="heart-container" title="Like">
+                    <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Fondo1.jpg','Villa', 500)"/>
+                    <div class="svg-container">
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="eye-icon">
+                    <img src="img/Ojo.png" alt="" onclick="vermas1()"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="info-carta" id="propiedad Apartamentos" data-operacion="comprar" data-tipo="villa">
+            <div class="venta1">
+              <h3>Rentar</h3>
+            </div>
+            <a type="button" class="img-boton" onclick="vermas3()">
+              <img src="img/Fondo2.jpg" alt="" class="img-carta"/>
+            </a>
+    
+            <div class="contenedor-icons">
+              <h3 class="title-des">Beautiful Luxury House/Punta Cana Villa</h3>
+              <div class="info-icon">
+                <img src="img/cama2.png" alt="" />
+                <p>5 Rooms</p>
+    
+                <img src="img/Bañera.png" alt="" />
+                <p>4 BathRooms</p>
+              </div>
+              <div class="info-icon">
+                <img src="img/Garage.png" alt="" />
+                <p>4 Garage</p>
+    
+                <img src="img/Garden.png" alt="" />
+                <p>Big garden</p>
+              </div>
+    
+              <div class="price">
+                <div>
+                  <h3>$420/noche</h3>
+                </div>
+    
+                <div class="contenedor-icons1">
+                  <div class="heart-container" title="Like">
+                    <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Fondo2.jpg','Villa', 420)"/>
+                    <div class="svg-container">
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="eye-icon">
+                    <img src="img/Ojo.png" alt="" onclick="vermas3()"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cat2">
+          <div class="info-carta" id="propiedad Houses" data-operacion="rentar" data-tipo="house">
+            <div class="venta1">
+              <h3>Rentar</h3>
+            </div>
+            <a type="button" class="img-boton" onclick="vermas5()">
+              <img src="img/fondo5.jpg" alt="" class="img-carta"/>
+            </a>
+    
+            <div class="contenedor-icons">
+              <h3 class="title-des">Las Terrenas Front Beach And Garden Villa</h3>
+              <div class="info-icon">
+                <img src="img/cama2.png" alt="" />
+                <p>5 Rooms</p>
+    
+                <img src="img/Bañera.png" alt="" />
+                <p>4 BathRooms</p>
+              </div>
+              <div class="info-icon">
+                <img src="img/Garage.png" alt="" />
+                <p>4 Garage</p>
+    
+                <img src="img/Garden.png" alt="" />
+                <p>Big Garden</p>
+              </div>
+    
+              <div class="price">
+                <div>
+                  <h3>$300/Noche</h3>
+                </div>
+                <div class="contenedor-icons1">
+                  <div class="heart-container" title="Like">
+                    <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/fondo5.jpg','Villa', 300)"/>
+                    <div class="svg-container">
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="eye-icon">
+                    <img src="img/Ojo.png" alt="" onclick="vermas5()"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="info-carta" id="propiedad Houses" data-operacion="comprar" data-tipo="villa">
+            <div class="venta1">
+              <h3>Rentar</h3>
+            </div>
+            <a type="button" class="img-boton" onclick="vermas7()">
+              <img src="img/fondo3.jpg" alt="" class="img-carta" />
+            </a>
+    
+            <div class="contenedor-icons">
+              <h3 class="title-des">Villa Lujosa Moderna/Cabrerá</h3>
+              <div class="info-icon">
+                <img src="img/cama2.png" alt="" />
+                <p>4 Rooms</p>
+    
+                <img src="img/Bañera.png" alt="" />
+                <p>3.5 BathRooms</p>
+              </div>
+              <div class="info-icon">
+                <img src="img/Garage.png" alt="" />
+                <p>Gran Atico</p>
+    
+                <img src="img/pool.png" alt="" />
+                <p>Big Pool</p>
+              </div>
+    
+              <div class="price">
+                <div>
+                  <h3>$450/noche</h3>
+                </div>
+                <div class="contenedor-icons1">
+                  <div class="heart-container" title="Like">
+                    <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/fondo3.jpg','Villa', 450)"/>
+                    <div class="svg-container">
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="eye-icon">
+                    <img src="img/Ojo.png" alt="" onclick="vermas7()"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+
+<!-- Catalogo 3 -->
+
+        <div class="catalogo" id="catalogo3">
+          <div class="cat1">
+            <div class="info-carta" id="propiedad Apartamentos" data-operacion="comprar" data-tipo="house">
+              <div class="venta1">
+                <h3>Venta</h3>
+              </div>
+              <a type="button" class="img-boton" onclick="vermas9()">
+                <img src="img/Apartment_1.jpg" alt="" class="img-carta"/>
+              </a>
+      
+              <div class="contenedor-icons">
+                <h3 class="title-des">Apartamento Lujoso en el corazon del país</h3>
+                <div class="info-icon">
+                  <img src="img/cama2.png" alt="" />
+                  <p>4 Rooms</p>
+      
+                  <img src="img/Bañera.png" alt="" />
+                  <p>3.5 BathRooms</p>
+                </div>
+                <div class="info-icon">
+                  <img src="img/Garage.png" alt="" />
+                  <p>4 Garage</p>
+      
+                  <img src="img/pool.png" alt="" />
+                  <p>jacuzzi</p>
+                </div>
+      
+                <div class="price">
+                  <div>
+                    <h3>$550,000</h3>
+                  </div>
+                  <div class="contenedor-icons1">
+                    <div class="heart-container" title="Like">
+                      <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Apartment_1.jpg','Apartamento', 550000)"/>
+                      <div class="svg-container">
+                        <svg
+                          viewBox="0 0 24 24"
+                          class="svg-outline"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                          ></path>
+                        </svg>
+                        <svg
+                          viewBox="0 0 24 24"
+                          class="svg-filled"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="eye-icon">
+                      <img src="img/Ojo.png" alt="" onclick="vermas9()"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="info-carta" id="propiedad Apartamentos" data-operacion="comprar" data-tipo="villa">
+              <div class="venta1">
+                <h3>Rentar</h3>
+              </div>
+              <a type="button" class="img-boton" onclick="vermas11()">
+                <img src="img/Apartamento_2.jpg" alt="" class="img-carta"/>
+              </a>
+      
+              <div class="contenedor-icons">
+                <h3 class="title-des">Lujoso Residencial en Bella vista #3</h3>
+                <div class="info-icon">
+                  <img src="img/cama2.png" alt="" />
+                  <p>3 Rooms</p>
+      
+                  <img src="img/Bañera.png" alt="" />
+                  <p>3 BathRooms</p>
+                </div>
+                <div class="info-icon">
+                  <img src="img/Garage.png" alt="" />
+                  <p>3 Garage</p>
+      
+                  <img src="img/Garden.png" alt="" />
+                  <p>Big social area</p>
+                </div>
+      
+                <div class="price">
+                  <div>
+                    <h3>$1,000/Mes</h3>
+                  </div>
+      
+                  <div class="contenedor-icons1">
+                    <div class="heart-container" title="Like">
+                      <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Apartamento_2.jpg','Apartamento', 1000)"/>
+                      <div class="svg-container">
+                        <svg
+                          viewBox="0 0 24 24"
+                          class="svg-outline"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                          ></path>
+                        </svg>
+                        <svg
+                          viewBox="0 0 24 24"
+                          class="svg-filled"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="eye-icon">
+                      <img src="img/Ojo.png" alt="" onclick="vermas11()"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cat2">
+            <div class="info-carta" id="propiedad Houses" data-operacion="rentar" data-tipo="house">
+              <div class="venta1">
+                <h3>venta</h3>
+              </div>
+              <a type="button" class="img-boton" onclick="vermas19()">
+                <img src="img/Apartamento_3.jpeg" alt="" class="img-carta"/>
+            </a>
+      
+              <div class="contenedor-icons">
+                <h3 class="title-des">Torre Lujosa ubicada en Bella vista</h3>
+                <div class="info-icon">
+                  <img src="img/cama2.png" alt="" />
+                  <p>3 Rooms</p>
+      
+                  <img src="img/Bañera.png" alt="" />
+                  <p>2 BathRooms</p>
+                </div>
+                <div class="info-icon">
+                  <img src="img/Garage.png" alt="" />
+                  <p>2 Garage</p>
+      
+                  <img src="img/Garden.png" alt="" />
+                  <p>Big Garden</p>
+                </div>
+      
+                <div class="price">
+                  <div>
+                    <h3>$300,000</h3>
+                  </div>
+                  <div class="contenedor-icons1">
+                    <div class="heart-container" title="Like">
+                      <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Apartamento_3.jpeg','Apartamento', 300000)"/>
+                      <div class="svg-container">
+                        <svg
+                          viewBox="0 0 24 24"
+                          class="svg-outline"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                          ></path>
+                        </svg>
+                        <svg
+                          viewBox="0 0 24 24"
+                          class="svg-filled"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="eye-icon">
+                      <img src="img/Ojo.png" alt="" onclick="vermas19()"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="info-carta" id="propiedad Houses" data-operacion="comprar" data-tipo="villa">
+              <div class="venta1">
+                <h3>Venta</h3>
+              </div>
+              <a type="button" class="img-boton" onclick="vermas17()">
+                <img src="img/Apartamento_2.jpeg" alt="" class="img-carta" />
+              </a>
+      
+              <div class="contenedor-icons">
+                <h3 class="title-des">Gran Torre con Helipuerto y Area social</h3>
+                <div class="info-icon">
+                  <img src="img/cama2.png" alt="" />
+                  <p>4 Rooms</p>
+      
+                  <img src="img/Bañera.png" alt="" />
+                  <p>3.5 BathRooms</p>
+                </div>
+                <div class="info-icon">
+                  <img src="img/icons8-helicóptero-50.png" alt="" />
+                  <p>Helipuerto</p>
+      
+                  <img src="img/pool.png" alt="" />
+                  <p>jacuzzi</p>
+                </div>
+      
+                <div class="price">
+                  <div>
+                    <h3>$185,000</h3>
+                  </div>
+                  <div class="contenedor-icons1">
+                    <div class="heart-container" title="Like">
+                      <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Apartamento_2.jpeg','Apartamento', 185000)"/>
+                      <div class="svg-container">
+                        <svg
+                          viewBox="0 0 24 24"
+                          class="svg-outline"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                          ></path>
+                        </svg>
+                        <svg
+                          viewBox="0 0 24 24"
+                          class="svg-filled"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="eye-icon">
+                      <img src="img/Ojo.png" alt="" onclick="vermas17()"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    <!-- catalogo 4 -->
+          <div class="catalogo" id="catalogo4">
+            <div class="cat1">
+              <div class="info-carta" id="propiedad Apartamentos" data-operacion="comprar" data-tipo="house">
+                <div class="venta1">
+                  <h3>Renta</h3>
+                </div>
+                <a type="button" class="img-boton" onclick="vermas15()">
+                  <img src="img/Fondo4.jpg" alt="" class="img-carta"/></a>
+        
+                <div class="contenedor-icons">
+                  <h3 class="title-des">Casa lujosa y moderna en santiago</h3>
+                  <div class="info-icon">
+                    <img src="img/cama2.png" alt="" />
+                    <p>5 Rooms</p>
+        
+                    <img src="img/Bañera.png" alt="" />
+                    <p>4 BathRooms</p>
+                  </div>
+                  <div class="info-icon">
+                    <img src="img/Garage.png" alt="" />
+                    <p>4 Garage</p>
+        
+                    <img src="img/Garden.png" alt="" />
+                    <p>big garden</p>
+                  </div>
+        
+                  <div class="price">
+                    <div>
+                      <h3>$1,000/Mes</h3>
+                    </div>
+                    <div class="contenedor-icons1">
+                      <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/fondo4.jpg','House', 1000)"/>
+                        <div class="svg-container">
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-outline"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                            ></path>
+                          </svg>
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-filled"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="eye-icon">
+                        <img src="img/Ojo.png" alt="" onclick="vermas15()"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="info-carta" id="propiedad Apartamentos" data-operacion="comprar" data-tipo="villa">
+                <div class="venta1">
+                  <h3>Rentar</h3>
+                </div>
+                <a type="button" class="img-boton" onclick="vermas1()">
+                  <img src="img/Fondo1.jpg" alt="" class="img-carta"/>
+                </a>
+        
+                <div class="contenedor-icons">
+                  <h3 class="title-des">
+                    Luxury Puerto Bahia Villa/Samaná</h3>
+                  <div class="info-icon">
+                    <img src="img/cama2.png" alt="" />
+                    <p>4 Rooms</p>
+        
+                    <img src="img/Bañera.png" alt="" />
+                    <p>6 BathRooms</p>
+                  </div>
+                  <div class="info-icon">
+                    <img src="img/Garage.png" alt="" />
+                    <p>4 Garage</p>
+        
+                    <img src="img/Garden.png" alt="" />
+                    <p>Big garden</p>
+                  </div>
+        
+                  <div class="price">
+                    <div>
+                      <h3>$420/noche</h3>
+                    </div>
+        
+                    <div class="contenedor-icons1">
+                      <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Fondo1.jpg','Villa', 500)"/>
+                        <div class="svg-container">
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-outline"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                            ></path>
+                          </svg>
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-filled"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="eye-icon">
+                        <img src="img/Ojo.png" alt="" onclick="vermas1()"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cat2">
+              <div class="info-carta" id="propiedad Houses" data-operacion="rentar" data-tipo="house">
+                <div class="venta1">
+                  <h3>Rentar</h3>
+                </div>
+                <a type="button" class="img-boton" onclick="vermas3()">
+                  <img src="img/Fondo2.jpg" alt="" class="img-carta"/>
+                </a>
+        
+                <div class="contenedor-icons">
+                  <h3 class="title-des">Beautiful Luxury House/Punta Cana Villa</h3>
+                  <div class="info-icon">
+                    <img src="img/cama2.png" alt="" />
+                    <p>5 Rooms</p>
+        
+                    <img src="img/Bañera.png" alt="" />
+                    <p>4 BathRooms</p>
+                  </div>
+                  <div class="info-icon">
+                    <img src="img/Garage.png" alt="" />
+                    <p>4 Garage</p>
+        
+                    <img src="img/Garden.png" alt="" />
+                    <p>Big Garden</p>
+                  </div>
+        
+                  <div class="price">
+                    <div>
+                      <h3>$420/Noche</h3>
+                    </div>
+                    <div class="contenedor-icons1">
+                      <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Fondo2.jpg','Villa', 420)"/>
+                        <div class="svg-container">
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-outline"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                            ></path>
+                          </svg>
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-filled"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="eye-icon">
+                        <img src="img/Ojo.png" alt="" onclick="vermas3()"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="info-carta"  id="propiedad Houses" data-operacion="comprar" data-tipo="villa">
+                <div class="venta1">
+                  <h3>Rentar</h3>
+                </div>
+                <a type="button" class="img-boton" onclick="vermas5()">
+                  <img src="img/fondo5.jpg" alt="" class="img-carta" />
+                </a>
+        
+                <div class="contenedor-icons">
+                  <h3 class="title-des">Las Terrenas Front Beach And Garden Villa</h3>
+                  <div class="info-icon">
+                    <img src="img/cama2.png" alt="" />
+                    <p>5 Rooms</p>
+        
+                    <img src="img/Bañera.png" alt="" />
+                    <p>4 BathRooms</p>
+                  </div>
+                  <div class="info-icon">
+                    <img src="img/Garage.png" alt="" />
+                    <p>4 garage</p>
+        
+                    <img src="img/Garden.png" alt="" />
+                    <p>Big garden</p>
+                  </div>
+        
+                  <div class="price">
+                    <div>
+                      <h3>$300/Noche</h3>
+                    </div>
+                    <div class="contenedor-icons1">
+                      <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/fondo5.jpg','Villa', 300)"/>
+                        <div class="svg-container">
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-outline"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                            ></path>
+                          </svg>
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-filled"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="eye-icon">
+                        <img src="img/Ojo.png" alt="" onclick="vermas5()"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cat2">
+              <div class="info-carta" id="propiedad Houses" data-operacion="rentar" data-tipo="house">
+                <div class="venta1">
+                  <h3>Rentar</h3>
+                </div>
+                <a type="button" class="img-boton" onclick="vermas11()">
+                  <img src="img/Apartamento_2.jpg" alt="" class="img-carta"/>
+                </a>
+        
+                <div class="contenedor-icons">
+                  <h3 class="title-des">Lujoso Residencial en Bella vista #3</h3>
+                  <div class="info-icon">
+                    <img src="img/cama2.png" alt="" />
+                    <p>3 Rooms</p>
+        
+                    <img src="img/Bañera.png" alt="" />
+                    <p>3 BathRooms</p>
+                  </div>
+                  <div class="info-icon">
+                    <img src="img/Garage.png" alt="" />
+                    <p>3 Garage</p>
+        
+                    <img src="img/Garden.png" alt="" />
+                    <p>Big social area</p>
+                  </div>
+        
+                  <div class="price">
+                    <div>
+                      <h3>$1,000/Mes</h3>
+                    </div>
+                    <div class="contenedor-icons1">
+                      <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Apartamento_2.jpg','Apartamento', 1000)"/>
+                        <div class="svg-container">
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-outline"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                            ></path>
+                          </svg>
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-filled"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="eye-icon">
+                        <img src="img/Ojo.png" alt="" onclick="vermas11()"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="info-carta" id="propiedad Houses" data-operacion="comprar" data-tipo="villa">
+                <div class="venta1">
+                  <h3>Rentar</h3>
+                </div>
+                <a type="button" class="img-boton" onclick="vermas7()">
+                  <img src="img/fondo3.jpg" alt="" class="img-carta" />
+                </a>
+        
+                <div class="contenedor-icons">
+                  <h3 class="title-des">Villa Lujosa Moderna/Cabrerá</h3>
+                  <div class="info-icon">
+                    <img src="img/cama2.png" alt="" />
+                    <p>4 Rooms</p>
+        
+                    <img src="img/Bañera.png" alt="" />
+                    <p>3.5 BathRooms</p>
+                  </div>
+                  <div class="info-icon">
+                    <img src="img/Garage.png" alt="" />
+                    <p>Gran Atico</p>
+        
+                    <img src="img/pool.png" alt="" />
+                    <p>Big Pool</p>
+                  </div>
+        
+                  <div class="price">
+                    <div>
+                      <h3>$450/noche</h3>
+                    </div>
+                    <div class="contenedor-icons1">
+                      <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/fondo3.jpg','Villa', 450)"/>
+                        <div class="svg-container">
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-outline"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                            ></path>
+                          </svg>
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-filled"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="eye-icon">
+                        <img src="img/Ojo.png" alt="" onclick="vermas7()"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Catalogo5 -->
+
+          <div class="catalogo" id="catalogo5">
+            <div class="cat1" id="cat1-1">
+              <div class="info-carta" id="propiedad Villas" data-operacion="Rentar" >
+                <div class="venta1">
+                  <h3>Venta</h3>
+                </div>
+                <a type="button" class="img-boton" onclick="vermas13()">
+                  <img src="img/Casa_de_campo.jpg" alt="" class="img-carta"/>
+                </a>
+        
+                <div class="contenedor-icons">
+                  <h3 class="title-des">Casa de campo en jarabacoa cerca del salto de los Monjes</h3>
+                  <div class="info-icon">
+                    <img src="img/cama2.png" alt="" />
+                    <p>3 Rooms</p>
+        
+                    <img src="img/Bañera.png" alt="" />
+                    <p>2 BathRooms</p>
+                  </div>
+                  <div class="info-icon">
+                    <img src="img/Garage.png" alt="" />
+                    <p>2 Garage</p>
+        
+                    <img src="img/Garden.png" alt="" />
+                    <p>Big gardem</p>
+                  </div>
+        
+                  <div class="price">
+                    <div>
+                      <h3>$80,000</h3>
+                    </div>
+                    <div class="contenedor-icons1">
+                      <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Casa_de_campo.jpg','House', 80000)"/>
+                        <div class="svg-container">
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-outline"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                            ></path>
+                          </svg>
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-filled"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="eye-icon">
+                        <img src="img/Ojo.png" alt="" onclick="vermas13()"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="info-carta" id="articulo" data-operacion="comprar" data-tipo="house">
+                <div class="venta1">
+                  <h3>Venta</h3>
+                </div>
+                <a type="button" class="img-boton" onclick="vermas9()">
+                  <img src="img/Apartment_1.jpg" alt="" class="img-carta"/>
+                </a>
+        
+                <div class="contenedor-icons">
+                  <h3 class="title-des">Apartamento Lujoso en el corazon del país</h3>
+                  <div class="info-icon">
+                    <img src="img/cama2.png" alt="" />
+                    <p>4 Rooms</p>
+        
+                    <img src="img/Bañera.png" alt="" />
+                    <p>3.5 BathRooms</p>
+                  </div>
+                  <div class="info-icon">
+                    <img src="img/Garage.png" alt="" />
+                    <p>4 Garage</p>
+        
+                    <img src="img/pool.png" alt="" />
+                    <p>jacuzzi</p>
+                  </div>
+        
+                  <div class="price">
+                    <div>
+                      <h3>$550,000</h3>
+                    </div>
+                    <div class="contenedor-icons1">
+                      <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Apartment_1.jpg','Apartamento', 550000)"/>
+                        <div class="svg-container">
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-outline"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                            ></path>
+                          </svg>
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-filled"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="eye-icon">
+                        <img src="img/Ojo.png" alt="" onclick="vermas9()"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+         
+            <div class="cat2" id="cat2-1">
+              <div class="info-carta" id="propiedad Alquileres" data-operacion="rentar" data-tipo="villa">
+                <div class="venta1">
+                  <h3>Venta</h3>
+                </div>
+                <a type="button" class="img-boton" onclick="vermas21()">
+                  <img src="img/House_contact.jpg" alt="" class="img-carta"/>
+                </a>
+        
+                <div class="contenedor-icons">
+                  <h3 class="title-des">Casa lujosa de 3 pisos en Bella vista
+                  </h3>
+                  <div class="info-icon">
+                    <img src="img/cama2.png" alt="" />
+                    <p>4 Rooms</p>
+        
+                    <img src="img/Bañera.png" alt="" />
+                    <p>3 BathRooms</p>
+                  </div>
+                  <div class="info-icon">
+                    <img src="img/Garage.png" alt="" />
+                    <p>3 Garage</p>
+        
+                    <img src="img/Garden.png" alt="" />
+                    <p>Big social area</p>
+                  </div>
+        
+                  <div class="price">
+                    <div>
+                      <h3>$280,000</h3>
+                    </div>
+                    <div class="contenedor-icons1">
+                      <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/House_contact.jpg','House', 280000)"/>
+                        <div class="svg-container">
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-outline"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                            ></path>
+                          </svg>
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-filled"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="eye-icon">
+                        <img src="img/Ojo.png" alt="" onclick="vermas21()"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="info-carta" id="propiedad Villa" data-operacion="comprar" data-tipo="villa">
+                <div class="venta1">
+                  <h3>Venta</h3>
+                </div>
+                <a type="button" class="img-boton" onclick="vermas23()">
+                  <img src="img/Casa_1.jpeg" alt="" class="img-carta" />
+                </a>
+        
+                <div class="contenedor-icons">
+                  <h3 class="title-des">Gran casa en la Avenida San Isidro Std.Este</h3>
+                  <div class="info-icon">
+                    <img src="img/cama2.png" alt="" />
+                    <p>4 Rooms</p>
+        
+                    <img src="img/Bañera.png" alt="" />
+                    <p>3.5 BathRooms</p>
+                  </div>
+                  <div class="info-icon">
+                    <img src="img/Garage.png" alt="" />
+                    <p>Gran Atico</p>
+        
+                    <img src="img/pool.png" alt="" />
+                    <p>Big Pool</p>
+                  </div>
+        
+                  <div class="price">
+                    <div>
+                      <h3>$160,000</h3>
+                    </div>
+                    <div class="contenedor-icons1">
+                      <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Casa_1.jpeg','House', 160000)"/>
+                        <div class="svg-container">
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-outline"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                            ></path>
+                          </svg>
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-filled"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="eye-icon">
+                        <img src="img/Ojo.png" alt="" onclick="vermas23()"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cat2">
+              <div class="info-carta" id="propiedad Houses" data-operacion="rentar" data-tipo="house">
+                <div class="venta1">
+                  <h3>venta</h3>
+                </div>
+                <a type="button" class="img-boton" onclick="vermas19()">
+                  <img src="img/Apartamento_3.jpeg" alt="" class="img-carta"/>
+                </a>
+        
+                <div class="contenedor-icons">
+                  <h3 class="title-des">Torre Lujosa ubicada en Bella vista</h3>
+                  <div class="info-icon">
+                    <img src="img/cama2.png" alt="" />
+                    <p>3 Rooms</p>
+        
+                    <img src="img/Bañera.png" alt="" />
+                    <p>2 BathRooms</p>
+                  </div>
+                  <div class="info-icon">
+                    <img src="img/Garage.png" alt="" />
+                    <p>2 Garage</p>
+        
+                    <img src="img/Garden.png" alt="" />
+                    <p>Big Garden</p>
+                  </div>
+        
+                  <div class="price">
+                    <div>
+                      <h3>$300,000</h3>
+                    </div>
+                    <div class="contenedor-icons1">
+                      <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Apartamento_3.jpeg','Apartamento', 300000)"/>
+                        <div class="svg-container">
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-outline"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                            ></path>
+                          </svg>
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-filled"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="eye-icon">
+                        <img src="img/Ojo.png" alt="" onclick="vermas19()"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="info-carta"id="propiedad Houses" data-operacion="comprar" data-tipo="villa">
+                <div class="venta1">
+                  <h3>Venta</h3>
+                </div>
+                <a type="button" class="img-boton" onclick="vermas17()">
+                  <img src="img/Apartamento_2.jpeg" alt="" class="img-carta" />
+                </a>
+        
+                <div class="contenedor-icons">
+                  <h3 class="title-des">Gran Torre con Helipuerto y Area social</h3>
+                  <div class="info-icon">
+                    <img src="img/cama2.png" alt="" />
+                    <p>4 Rooms</p>
+        
+                    <img src="img/Bañera.png" alt="" />
+                    <p>3.5 BathRooms</p>
+                  </div>
+                  <div class="info-icon">
+                    <img src="img/icons8-helicóptero-50.png" alt="" />
+                    <p>Helipuerto</p>
+        
+                    <img src="img/pool.png" alt="" />
+                    <p>jacuzzi</p>
+                  </div>
+        
+                  <div class="price">
+                    <div>
+                      <h3>$185,000</h3>
+                    </div>
+                    <div class="contenedor-icons1">
+                      <div class="heart-container" title="Like">
+                        <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('img/Apartamento_2.jpeg','Apartamento', 185000)"/>
+                        <div class="svg-container">
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-outline"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                            ></path>
+                          </svg>
+                          <svg
+                            viewBox="0 0 24 24"
+                            class="svg-filled"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="eye-icon">
+                        <img src="img/Ojo.png" alt="" onclick="vermas17()"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+            <footer>
+              <div class="footerContainer">
+                  <div class="socialIcons">
+                      <a href=""><i class="fa-brands fa-facebook"></i></a>
+                      <a href=""><i class="fa-brands fa-instagram"></i></a>
+                      <a href=""><i class="fa-brands fa-twitter"></i></a>
+                      <a href=""><i class="fa-brands fa-youtube"></i></a>
+                  </div>
+                  <div class="footerNav">
+                      <ul><li><a href="index.html">Home</a></li>
+                          <li><a href="#seccion1">Destacados</a></li>
+                          <li><a href="#seccion2">Quienes somos</a></li>
+                          <li><a href="Productos.html">Productos</a></li>
+                          <li><a href="">Contact Us</a></li>
+                      </ul>
+                  </div>
+                  
+              </div>
+              <div class="footerBottom">
+                  <p>Copyright &copy;2024; Diseñado por <span class="designer">Luisangel Ramirez</span></p>
+              </div>
+            </footer>
+
+        <script src="js/js_productos.js"></script>
+      
+</body>
+</html>

@@ -1,0 +1,153 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto';
+    background: #c6c6c6;
+    height: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+    font-weight: 700;
+}
+
+form{
+    background: #fff;
+    padding: 100px ;
+    box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+
+}
+
+.contenedor{
+
+	display: flex;
+}
+
+.contenedor-1{
+
+	position: relative;
+
+}
+.contenedor-2{
+
+	position: relative;
+}
+
+.grupo{
+    position: relative;
+    margin: 45px ;
+}
+
+.grupo-1{
+    position: relative;
+    margin: 45px ;
+}
+.grupo-1 div{
+    
+    margin: 0px 28px 0px 0px;
+}
+
+input{
+    background: none;
+    color: #c6c6c6;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid grey;
+    outline: none;
+}
+
+
+label{
+    color: grey;
+    font-size: 16px;
+    position: absolute;
+    left: 5px;
+    transition: 0.5s ease all;
+    pointer-events: none;
+    top: -14px;
+    color: #2196f3;
+}
+
+.label-1{
+
+	position: absolute;
+
+}
+
+.label-2{
+
+	position:absolute;
+
+
+}
+
+
+
+.texto{
+    width: 300px;
+    text-align: center;
+    margin: auto;
+    color: #000000;
+    padding-top: 20px;
+}
+
+button{
+
+    font-family: 'roboto';
+    background: #4568DC;
+    border: none;
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    color: #fff;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+	position: relative;
+
+}
+
+
+select {
+    font-size: 14px;
+    padding: 8px 12px;
+    color: #0077b6;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+	margin-top: 10px;
+}
+
+select:hover {
+    border-color: #0077b6;
+}
+
+select:focus {
+    border-color: #0077b6;
+    box-shadow: 0 0 5px rgba(0, 119, 182, 0.5);
+}
+
+
+input [type=number]{
+
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}

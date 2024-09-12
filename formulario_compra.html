@@ -1,0 +1,88 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/form.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+
+	<body>
+	
+	
+    <form action="" method="" id="form" onsubmit="validacion(event)">
+      <h1 class="texto">Realiza tu compra</h1>
+
+      	<div class="contenedor">
+			<div>
+			<div class="grupo">
+				<input type="text" name="" id="name" /><span></span>
+				<label for="">Nombre y apellido</label>
+			</div>
+			<div class="grupo">
+				<input type="email" name="" id="email" /><span></span>
+				<label for="">Email</label>
+			</div>
+			<div class="grupo">
+				<input type="number" name="" id="cedula" /><span></span>
+				<label for="">Numero de cedula</label>
+			</div>
+
+			<div class="grupo">
+				<input type="text" name="" id="direccion" /><span></span>
+				<label for="">Dirección de recidencia</label>
+			</div>
+			</div>
+
+			<div>
+				<div class="grupo">
+					<input type="number" name="" id="num" /><span></span>
+					<label for="">Numero telefonico</label>
+				</div>
+				<div class="grupo">
+					<input type="text" name="" id="codigo"/><span></span>
+					<label for="">Codigo postal</label>
+				</div>
+				<div class="grupo">
+					<input type="number" name="" id="cuenta" /><span></span>
+					<label for="">Numero de cuenta de pago</label>
+				</div>
+
+				<div class="grupo-1" style="display: flex;">
+					<div class="contenedor-1">
+						<select name="metodo_de_pago" id="metodo_pago">
+							<option value="Visa">Transferencia b.</option>
+							<option value="Visa">Efectivo</option>
+							<option value="Visa">Criptomoneda</option>
+							<option value="Vsia">Credito</option>
+						</select>
+						<label for="" class="label-1">Metodo de pago</label>
+					</div>
+
+
+					<div class="contenedor-2">
+						<select name="Tipo_de_casa" id="tipo_casa">
+							<option value="Visa">Tipo de casa</option>
+							<option value="Visa">Villa</option>
+							<option value="Visa">Casa</option>
+							
+						</select>
+						<label for="" class="label-2">Tipo de casa</label>
+					</div>
+				</div>
+			
+			</div>
+      	</div>
+
+      <button type="submit">Realizar Reserva</button>
+      
+    </form>
+
+	<script src="js/form.js"></script>
+  </body>
+</html>

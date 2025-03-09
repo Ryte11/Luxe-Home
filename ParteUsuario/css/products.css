@@ -12,10 +12,427 @@ body {
     box-shadow:  0px 5px 61px 6px rgba(0,0,0,0.75);
     
   }
+
+
+ 
+/* menu css responsive */
+@media (max-width: 1650px){
+  .menu ul li a{
+      font-size: 20px;
+      margin: 15px;
+  } 
+  .logo h1{
+    font-size: 30px;
+  }
+  .icon2{
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .icon1{
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .iconos div{
+    width: 40px !important;
+    height: 40px !important;
+  }
+ 
+  .abrir-menu svg{
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .texto-1 h1{
+    font-size: 23px !important;
+  }
+  .texto-1 h3{
+    font-size: 20px !important;
+  }
+  .precio-1 h1{
+    font-size: 25px !important;
+  } 
+  .precio-1 h2{
+    font-size: 20px !important;
+  }
+  .select1{
+    font-size: 20px !important;
+    width: 12em !important;
+  }
+  .buscador_Des input{
+    width: 50% !important;
+  }
+  .Selecciona .arrow{
+    width: 20px !important;
+    height: 16px !important;
+  }
+  /* parte de propiedades */
+
+
+  .info-carta{
+    width: 45% !important;
+    height: 300px !important;
+  }
+}
+@media (max-width: 1470px){
+   .buscador_Des input{
+    width: 100% !important;
+  }
+  .Selecciona, .buscador_Des{
+    display: flex !important;
+    flex-direction: column;
+  }
+  .group{
+    max-width: 100% !important;
+  }
+  .info-carta{
+    width: 65% !important;
+    height: 300px !important;
+  }
+  .qn_1{
+    width: 90% !important;
+  }
+}
+/* responsive mas pequeño */
+@media (max-width: 1350px){
+  .menu ul {
+     display: none;
+  } 
+  .menu{
+    justify-content: space-between;
+  }
+ .icon2{
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .icon1{
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .iconos div{
+    width: 50px !important;
+    height: 50px !important;
+  }
+ 
+  .abrir-menu svg{
+    width: 55px !important;
+    height: 55px !important;
+  }
+  .details{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .venta{
+    width: 100% !important;
+  }
+  .precio-1 h1 {
+    font-size: 20px !important;
+  }
+}
+
+@media (max-width: 950px){
+  .busqueda{
+    display: none !important;
+  }
+  .info-carta{
+    width: 80% !important;
+    height: 300px !important;
+  }
+ 
+  .qn_1{
+    width: 90% !important;
+    flex-direction: column;
+    align-items: center;
+    height: 100% !important;
+  }
+  .texto_img, .texto2_img{
+    width: 90% !important;
+    text-align: justify;
+  }
+  .Descripcion{
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 5px !important;
+  }
+  .details{
+    flex-direction: row;
+    margin: 10px;
+    
+  }
+  .precio-1{
+    margin-left: 5px;
+  }
+  .precio-1 h1{
+    font-size: 26px !important;
+  }
+  .precio-1 h2{
+    font-size: 25px !important;
+  }
+}
+
+
+/* responsive mas pequeño */
+@media (max-width: 870px){
+  .Descripcion1{
+    display: none !important;
+  }
+  .precio-1{
+    margin: 0px 10px 20px 0px;
+  }
+  .precio-1 h1{
+    font-size: 20px !important;
+  }
+  .precio-1 h2{
+    font-size: 20px !important;
+  }
+  .texto-1 h1 {
+    font-size: 16px !important;
+  }
+  .texto-1 h3 {
+    font-size: 14px !important;
+  }
+  .venta{
+    margin: 0px 10px 50px 10px !important;
+  }
+  .flecha-de, .flecha-iz{
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .flecha-de img, .flecha-iz img{
+    width: 30px !important;
+    height: 30px !important;
+  }
+ .carrito{
+      width: 350px !important;
+    }
+  /* responsive cartas */
+
+  .title-des{
+    font-size: 20px !important;
+    
+  }
+  .price{
+    padding-top: 0px !important;
+  }
+  .price h3{
+      font-size: 18px !important;
+    }
+    .info-icon{
+      margin: 5px 10px 10px 10px !important;
+    }
+    .contenedor{
+      background-position: 40% 85%;
+    }
+   
+}
+
+@media (max-width: 640px){
+  .img-carta{
+    width: 200px !important;
+    
+  }
+  .info-carta{
+    width: 90% !important;
+    height: 250px !important;
+  }
+
+  .cat1, .cat2{
+    gap: 30px !important;
+  }
+  .heart-container{
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .price svg{
+    width: 24px !important;
+    height: 24px !important;
+  }
+  .eye-icon img{
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .info-icon{
+    display: none !important;
+  }
+  .contenedor-icons{
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .contenedor-icons img{
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .quienes_somos{
+    font-size: 23PX !important;
+    margin-top: 40PX !important;
+  }
+  .precio-1 h2, h1{
+    font-size: 20px !important;
+  }
+  .text1_qn p{
+    font-size: 16px !important;
+  }
+  .abrir-menu{
+    width: 60px !important;
+    height: 60px !important;
+  }
+  .iconos div{
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .icon1{
+    width: 25px !important;
+    height: 25px !important;
+  }
+  .footerNav ul {
+    padding: 0px !important;
+  }
+  .qn_1 img{
+    width: 60px !important;
+    height: 60px !important;
+  }
+  .form-box{
+    width: 85% !important;
+  }
+}
+
+@media (max-width: 440px){
+  .details{
+    display: none !important;
+  }
+  .precio-1{
+    display: none !important;
+  }
+  .texto-1{
+    text-align: center;
+  }
+  .img-carta{
+    width: 150px !important;
+  }
+  .price{
+    flex-direction: column;
+  }
+  .form-box{
+    width: 70% !important;
+  }
+  .title{
+    font-size: 1.8rem !important;
+  }
+  .subtitle{
+    font-size: 1rem !important;
+  }
+}
+
+
+/* usuario perfil */
+
+/* Pop-up de perfil de usuario */
+#perfilBox {
+    max-width: 400px;
+    background: #f1f7fe;
+    overflow: hidden;
+    border-radius: 16px;
+    color: #010101;
+    font-family: inter;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#perfilBox .form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 24px 24px;
+    gap: 16px;
+    text-align: center;
+}
+
+#perfilBox .form-container {
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 1rem 0 .5rem;
+    width: 100%;
+    font-family: inter;
+}
+
+#perfilBox .form-container img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+#perfilBox .form-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+#perfilBox .form-container p {
+    font-size: 1rem;
+    color: #666;
+}
+
+#perfilBox button {
+    background-color: #0066ff;
+    color: #fff;
+    border: 0;
+    border-radius: 24px;
+    padding: 10px 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color .3s ease;
+    font-family: inter;
+}
+
+#perfilBox button:hover {
+    background-color: #005ce6;
+}
+
+
   
  
   /* opacidad de contenedor central */
-  
+  .overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+  .overlay-form {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+  .overlay-perfil {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
   .menu {
     display: flex;
     justify-content: center;
@@ -1032,7 +1449,7 @@ display: block
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(/img/Houses.jpg);
+  background-image: url(../img/Houses.jpg);
   background-size: cover;
   transition: transform 0.5s ease-in-out;
   border-radius: 15px;
@@ -1116,8 +1533,8 @@ display: block
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;5
-  background-image: url(/img/Villa_2.jpg);
+  bottom: 0;
+  background-image: url(../img/Villa_2.jpg);
   background-size: cover;
   transition: transform 0.5s ease-in-out;
   border-radius: 15px;
@@ -1157,7 +1574,7 @@ display: block
   right: 0;
   bottom: 0;
   background-size: cover;
-  background-image: url(/img/Apartamentos.jpg);
+  background-image: url(../img/Apartamentos.jpg);
   transition: transform 0.5s ease-in-out;
   border-radius: 15px;
 }
@@ -1194,7 +1611,7 @@ display: block
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(/img/Alquieleres.jpg);
+  background-image: url(../img/Alquieleres.jpg);
   background-position: right;
   background-size: cover;
   transition: transform 0.5s ease-in-out;
@@ -1233,7 +1650,7 @@ display: block
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(/img/Ventas.jpg);
+  background-image: url(../img/Ventas.jpg);
   background-size: cover;
   transition: transform 0.5s ease-in-out;
   border-radius: 15px;
@@ -1276,15 +1693,16 @@ display: block
 
 
 
+
 .catalogo {
   margin-top: 60px;
   width: 100%;
   height: auto;
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
+  margin-bottom: 40px;
 }
 .cat1 {
   display: flex;
@@ -1334,9 +1752,7 @@ display: block
   font-family: inter;
   padding: 12px;
 }
-h3{
-  margin: 0
-}
+
 .info-icon {
   display: flex;
   align-items: center;
@@ -1384,6 +1800,26 @@ h3{
   justify-content: center;
   gap: 100px;
 }
+
+
+/* responsive  */
+
+@media (max-width: 700px){
+  .footerNav ul{
+      flex-direction: column;
+  } 
+  .footerNav ul li{
+      width:100%;
+      text-align: center;
+      margin: 10px;
+  }
+  .socialIcons a{
+      padding: 8px;
+      margin: 4px;
+  }
+}
+
+
 
 /* Boton de ver mas  */
 
@@ -1518,7 +1954,7 @@ footer{
   font-family: inter;
 }
 .footerContainer{
-  width: 100%;
+  
   padding: 70px 30px 20px ;
 }
 .socialIcons{

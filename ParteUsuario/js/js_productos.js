@@ -1,220 +1,51 @@
-// funcion de suma a favoritos
-document.addEventListener('DOMContentLoaded', function() {
-  const checkboxes = document.querySelectorAll('.checkbox');
-  const likeButton = document.querySelector('.like-button');
-
-  let likeCount = 0; 
-
-  function spanNum() {
-    likeButton.textContent = likeCount;
-  }
-
-  checkboxes.forEach(function(checkbox) {
-    if (checkbox.checked) {
-      likeCount++; 
-    }
-
-    checkbox.addEventListener('change', function() {
-      if (this.checked) {
-        likeCount++; 
-      } else {
-        likeCount--; 
-      }
-      spanNum();
-    });
-  });
-  spanNum();
-});
-
-
-
-// carrito de compras
-
-
-
-let carrito = [];
-
-function agregarAlCarrito(imagenURL, nombre, precio) {
-  const index = carrito.findIndex(item => item.nombre === nombre && item.imagen === imagenURL);
-
-  if (index !== -1) {
-    carrito.splice(index, 1);
-  } else {
-    carrito.push({ imagen: imagenURL, nombre, precio });
-  }
-  actualizarCarrito();
-}
-
-
-
-
-// Función para eliminar un producto del carrito
-function eliminarProducto(id) {
-  const index = carrito.findIndex(item => item.id === id);
-  
-  if (index !== -1) {
-   
-    carrito.splice(index, 1);
-    actualizarCarrito();
-  }
-}
-
-function actualizarCarrito() {
-  let carritoItems = document.getElementById("carrito-items");
-  let totalPrecio = document.getElementById("total-precio");
-  carritoItems.innerHTML = "";
-  let total = 0;
-  
-  carrito.forEach(item => {
-    let itemElement = document.createElement("div");
-    itemElement.classList.add("producto-carrito");
-
-    let imageElement = document.createElement("img");
-    imageElement.src = item.imagen;
-    imageElement.alt = item.nombre;
-    imageElement.classList.add("imagen-carrito");
-
-    let nameElement = document.createElement("p");
-    nameElement.textContent = item.nombre;
-    nameElement.classList.add("nombre-carrito");
-
-    let priceElement = document.createElement("p");
-    priceElement.textContent = `$${item.precio}`;
-    priceElement.classList.add("precio-carrito");
-
-    let deleteButton = document.createElement("button");
-      deleteButton.textContent = "X";
-      deleteButton.classList.add("eliminar-producto");
-
-      deleteButton.addEventListener("click", function() {
-          let productId = this.dataset.id;
-          eliminarProducto(productId);
-      });
-
-    itemElement.appendChild(imageElement);
-    itemElement.appendChild(nameElement);
-    itemElement.appendChild(priceElement);
-    itemElement.appendChild(deleteButton);
-
-    carritoItems.appendChild(itemElement);
-    total += item.precio;
-  });
-
-  totalPrecio.textContent = total;
-}
-  
-function abrirCarrito() {
-    let overlay = document.getElementById("over")
-    document.getElementById("carrito").style.right = "0";
-    overlay.style.display = 'block';
-  }
-
-function cerrarCarrito() {
-    let overlay = document.getElementById("over")
-   document.getElementById("carrito").style.right = "-650px";
-   overlay.style.display = 'none';
-}
-document.addEventListener('DOMContentLoaded', function() {
-  var overlay = document.getElementById('over');
-  overlay.addEventListener('click', function(event) {
-    var formBox = document.getElementById('carrito');
-    var isClickedInsideForm = formBox.contains(event.target);
-    if (!isClickedInsideForm) {
-      cerrarCarrito();
-    }
-  });
-  });
-
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const checkboxes = document.querySelectorAll('.checkbox');
-    const likeButton = document.querySelector('.like-button');
-  
-    let likeCount = 0; 
-  
-    function spanNum() {
-      likeButton.textContent = likeCount;
-    }
-  
-    checkboxes.forEach(function(checkbox) {
-      if (checkbox.checked) {
-        likeCount++; 
-      }
-  
-      checkbox.addEventListener('change', function() {
-        if (this.checked) {
-          likeCount++; 
-        } else {
-          likeCount--; 
-        }
-        spanNum();
-      });
-    });
-    spanNum();
-  });
-  
-// funcion para limpiar el carrito
-
-  function limpiar() {
-    let carrito = document.getElementById("carrito-items");
-    let total = document.getElementById("total-precio");
-    let corazon = document.getElementById("like-button");
-
-    if (carrito.children.length === 0) {
-        alert("El carrito está vacío");
-    }
-    while (carrito.firstChild) {
-        carrito.removeChild(carrito.firstChild);
-    }
-    total.textContent = "0"
-    corazon.textContent ="0"
-}
-
 
 function compra() {
-  let carritoItems = document.getElementById("carrito-items");
-
-  if (carritoItems.childElementCount === 0) {
-    alert("El carrito está vacío.");
-    return false;
-  }
-
-  let botonConfirm = confirm("¿Está seguro que desea comprar?");
-  if (botonConfirm) {
-    window.location.href = "formulario_compra.html";
-  } else {
-    alert("Está bien, puede seguir explorando nuestro catálogo.");
-    return false;
-  }
-}
-
-
-
-// menu desplegable
-function menuAbrir() {
-  let overlay = document.getElementById("over")
-  document.getElementById("carrito1").style.right = "0";
-  overlay.style.display = 'block';
-}
-
-function MenuCerrar() {
-  let overlay = document.getElementById("over")
- document.getElementById("carrito1").style.right = "-350px";
- overlay.style.display = 'none';
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  var overlay = document.getElementById('over');
-  overlay.addEventListener('click', function(event) {
-    var formBox = document.getElementById('carrito1');
-    var isClickedInsideForm = formBox.contains(event.target);
-    if (!isClickedInsideForm) {
-      MenuCerrar()();
+    let carritoItems = document.getElementById("carrito-items");
+    
+    if (carritoItems.childElementCount === 0) {
+        alert("El carrito está vacío.");
+        return false;
     }
-  });
-  });
+    
+    let botonConfirm = confirm("¿Está seguro que desea comprar?");
+    if (botonConfirm) {
+        window.location.href = "formulario_compra.html";
+    } else {
+        alert("Está bien, puede seguir explorando nuestro catálogo.");
+        return false;
+    }
+}
+
+function mostrarPerfil() {
+    var overlayPerfil = document.getElementById('overlayPerfil');
+    var perfilBox = document.getElementById('perfilBox');
+    var usuario = JSON.parse(localStorage.getItem("usuarioActual"));
+    
+    if (usuario) {
+        document.getElementById('perfilNombre').textContent = usuario.nombre;
+        document.getElementById('perfilEmail').textContent = usuario.email;
+        document.getElementById('perfilImagen').src = `https://i.pravatar.cc/50?u=${usuario.email}`;
+        
+        overlayPerfil.style.display = 'block';
+        perfilBox.style.display = 'block';
+        
+        // Cargar carrito del usuario
+        const carritoKey = `carrito_${usuario.email}`;
+        let carrito = JSON.parse(localStorage.getItem(carritoKey)) || [];
+        localStorage.setItem(carritoKey, JSON.stringify(carrito));
+        actualizarCarrito();
+    }
+}
+
+function ocultarPerfil() {
+    var overlayPerfil = document.getElementById('overlayPerfil');
+    var perfilBox = document.getElementById('perfilBox');
+    
+    overlayPerfil.style.display = 'none';
+    perfilBox.style.display = 'none';
+}
+
+// CAMBIAR productos
 
 
 // cambiar el titulo del catalogo
@@ -287,135 +118,15 @@ function cambiar_productos() {
 
 document.addEventListener("DOMContentLoaded", cambiar_productos);
 
+document.addEventListener('DOMContentLoaded', function() {
+    var overlayPerfil = document.getElementById('overlayPerfil');
+    overlayPerfil.addEventListener('click', function(event) {
+        if (event.target === overlayPerfil) {
+            ocultarPerfil();
+        }
+    });
+});
 
-
-
-
-
-
-// mostrar formulario registro
-
-
-
-function mostrarFormulario() {
-  var overlay = document.getElementById('over');
-  var formBox = document.getElementById('formBox');
-  
-  overlay.style.display = 'block';
-  formBox.style.display = 'block';
-  }
-  
-  
-  
-  // mostrar formulario login
-  
-  document.addEventListener('DOMContentLoaded', function() {
-  var overlay = document.getElementById('over');
-  overlay.addEventListener('click', function(event) {
-    var formBox = document.getElementById('formBox1');
-    var isClickedInsideForm = formBox.contains(event.target);
-    if (!isClickedInsideForm) {
-      ocultarFormulario();
-    }
-  });
-  });
-  
-  function mostrarFormulario1() {
-    var overlay = document.getElementById('over');
-    var formBox = document.getElementById('formBox');
-    var formBox1 = document.getElementById('formBox1');
-    
-    formBox1.style.display = 'block';
-    overlay.style.display = 'block';
-    formBox.style.display = 'none';
-  }
-  
-  function ocultarFormulario() {
-    var overlay = document.getElementById('over');
-    var formBox = document.getElementById('formBox');
-    var formBox1 = document.getElementById('formBox1');
-  
-    formBox1.style.display = 'none'
-    overlay.style.display = 'none';
-    formBox.style.display = 'none';
-  }
-  
-  
-  
-  
-  //validacion de formularios
-  const form = document.getElementById("form")
-  function validacion(event) {
-  event.preventDefault();
-  
-  
-  const nombre = document.getElementById("name");
-  const email = document.getElementById("email");
-  const pasword = document.getElementById("password")
-  
-  if (
-    nombre.value === "" &&
-    pasword.value === "" &&
-    email.value === ""
-    
-  ) {
-    alert("Todos los campos están vacíos");
-    return false;
-  } else if (nombre.value.length < 6) {
-    alert("El nombre no es válido tiene muy pocos caracteres");
-    return false;
-  } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(email.value)) {
-    alert("El email no es válido");
-    return false;
-  }else if (pasword.value.length < 6) {
-    alert("La contraseña tiene muy pocos caracteres");
-    return false;
-  } else {
-    alert('FORMULARIO ENVIADO') 
-    ocultarFormulario();
-    form.submit();
-    nombre.value = "";
-    email.value = "";
-    pasword.value = "";
-   
-   
-  }
-  }
-  
-  
-  // validacion login
-  const form1 =document.getElementById("form1")
-  function validacion1(event) {
-    event.preventDefault();
-    
-    const email = document.getElementById("email1");
-    const pasword = document.getElementById("password1")
-    
-    if (
-      pasword.value === "" &&
-      email.value === ""
-      
-    ) {
-      alert("Todos los campos están vacíos");
-      return false;
-    } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(email.value)) {
-      alert("El email no es válido");
-      return false;
-    }else if (pasword.value.length < 6) {
-      alert("La contraseña tiene muy pocos caracteres");
-      return false;
-    } else {
-      alert('FORMULARIO ENVIADO') 
-      ocultarFormulario();
-      form1.submit();
-      email.value = "";
-      pasword.value = "";
-     
-    }
-    }
-
-
-    /// ver mas productos
 
 /// ver mas 1
 

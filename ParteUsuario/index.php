@@ -2,7 +2,7 @@
 include 'PHP/conexion.php';
 
 // Realizar consulta a la base de datos
-$sql = "SELECT * FROM productos";
+$sql = "SELECT * FROM productos LIMIT 8";
 $result = $conn->query($sql);
 
 // Verificar si la consulta fue exitosa
@@ -44,7 +44,7 @@ if ($result === false) {
             <li><a href="Productos.php">Products</a></li>
             <li><a href="#seccion1">Destacados</a></li>
             <li><a href="#seccion2">¿Quienes somos?</a></li>
-            <li><a href="Contactos.html">Contact US</a></li>
+            <li><a href="Contactos.php">Contact US</a></li>
           </ul>
         </nav>
 
@@ -458,6 +458,7 @@ if ($result === false) {
   </script>
 
   <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="js/carrito.js"></script>
   <script src="js/js.js"></script>
 </body>
 

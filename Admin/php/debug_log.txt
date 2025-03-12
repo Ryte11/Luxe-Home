@@ -1,0 +1,298 @@
+Request recibido: 2025-03-11 23:38:19
+POST data: Array
+(
+    [id] => 1
+    [status] => Cancelado
+)
+
+Conexión establecida
+ID: 0, Nombre: , Status: Cancelado
+Excepción: Error en la preparación: Unknown column 'notas' in 'field list'
+Fin del proceso
+
+Request recibido: 2025-03-11 23:42:43
+POST data: Array
+(
+    [id] => 1
+    [status] => Cancelado
+)
+
+Conexión establecida
+ID: 0, Nombre: , Status: Cancelado
+Excepción: Error en la preparación: Unknown column 'notas' in 'field list'
+Fin del proceso
+
+Request recibido: 2025-03-11 23:46:10
+POST data: Array
+(
+    [reservationId] => 3
+    [clientName] => Jose angel
+    [property] => Modern Luxury Apartment
+    [reservationType] => Visit
+    [reservationDate] => 2025-03-13
+    [notes] => 
+    [status] => Confirmed
+)
+
+Conexión establecida
+ID: 3, Nombre: Jose angel, Status: Confirmed
+Consulta preparada
+Actualización exitosa
+Fin del proceso
+
+Request recibido: 2025-03-12 01:48:45
+POST data: Array
+(
+    [reservationId] => 1
+    [clientName] => Luisangel Ramír
+    [phone] => 829 912 9914
+    [checkInDate] => 2025-03-05
+    [checkOutDate] => 2025-03-13
+    [guestCount] => 2
+    [comments] => si que si soy el mejor
+    [status] => Pending
+)
+
+Conexión establecida
+ID: 1, Nombre: Luisangel Ramír, Teléfono: 829 912 9914, Status: Pending
+Consulta preparada
+Actualización exitosa
+Fin del proceso
+
+Request recibido: 2025-03-12 01:50:08
+POST data: Array
+(
+    [reservationId] => 1
+    [clientName] => Luisangel Ramír
+    [phone] => 829 912 9914
+    [checkInDate] => 2025-03-05
+    [checkOutDate] => 2025-03-13
+    [guestCount] => 2
+    [comments] => si que si soy el mejor
+    [status] => Pending
+)
+
+Conexión establecida
+ID: 1, Nombre: Luisangel Ramír, Teléfono: 829 912 9914, Status: Pending
+Consulta preparada
+Actualización exitosa
+Fin del proceso
+
+Request recibido: 2025-03-12 01:50:17
+POST data: Array
+(
+    [reservationId] => 1
+    [clientName] => Luisangel Ramír
+    [phone] => 829 912 9914
+    [checkInDate] => 2025-03-04
+    [checkOutDate] => 2025-03-12
+    [guestCount] => 2
+    [comments] => si que si soy el mejor
+    [status] => Confirmed
+)
+
+Conexión establecida
+ID: 1, Nombre: Luisangel Ramír, Teléfono: 829 912 9914, Status: Confirmed
+Consulta preparada
+Actualización exitosa
+Fin del proceso
+
+Request recibido: 2025-03-12 01:58:20
+POST data: Array
+(
+    [reservationId] => 
+    [clientName] => luisanny
+    [phone] => 829 993223
+    [checkInDate] => 2025-03-07
+    [checkOutDate] => 2025-03-28
+    [guestCount] => 11
+    [comments] => hoal soy el goat
+    [status] => Pending
+)
+
+Conexión establecida
+ID: 0, Nombre: luisanny, Teléfono: 829 993223, Status: Pending
+Consulta preparada
+Actualización exitosa
+Fin del proceso
+
+Request recibido: 2025-03-12 01:58:58
+POST data: Array
+(
+    [reservationId] => 
+    [clientName] => Luisanny
+    [phone] => 8299129914
+    [checkInDate] => 2025-03-13
+    [checkOutDate] => 2025-03-21
+    [guestCount] => 7
+    [comments] => hola la grasa
+    [status] => Pending
+)
+
+Conexión establecida
+ID: 0, Nombre: Luisanny, Teléfono: 8299129914, Status: Pending
+Consulta preparada
+Actualización exitosa
+Fin del proceso
+
+Request recibido: 2025-03-12 04:53:59
+POST data: Array
+(
+    [reservationId] => 
+    [clientName] => Luisanny
+    [phone] => 8299129914
+    [checkInDate] => 2025-03-14
+    [checkOutDate] => 2025-03-21
+    [guestCount] => 2
+    [comments] => hola cracks
+    [status] => Pending
+)
+
+Conexión establecida
+ID: 0, Nombre: Luisanny, Teléfono: 8299129914, Status: Pending
+Consulta preparada
+Actualización exitosa
+Fin del proceso
+
+Request recibido: 2025-03-12 04:54:45
+POST data: Array
+(
+    [reservationId] => 
+    [clientName] => Jose angel crack
+    [phone] => 8299129914
+    [checkInDate] => 2025-03-14
+    [checkOutDate] => 2025-03-12
+    [guestCount] => 2
+    [comments] => sdsdsadsdsd
+    [status] => Confirmed
+)
+
+Conexión establecida
+ID: 0, Nombre: Jose angel crack, Teléfono: 8299129914, Status: Confirmed
+Consulta preparada
+Actualización exitosa
+Fin del proceso
+
+Request recibido: 2025-03-12 04:55:08
+POST data: Array
+(
+    [reservationId] => 1
+    [clientName] => Luisangel Ram
+    [phone] => 829 912 9914
+    [checkInDate] => 2025-03-04
+    [checkOutDate] => 2025-03-12
+    [guestCount] => 2
+    [comments] => si que si soy el mejor
+    [status] => Confirmed
+)
+
+Conexión establecida
+ID: 1, Nombre: Luisangel Ram, Teléfono: 829 912 9914, Status: Confirmed
+Consulta preparada
+Actualización exitosa
+Fin del proceso
+
+Request recibido: 2025-03-12 22:05:34
+POST data: Array
+(
+    [reservationId] => 
+    [clientName] => Luisangel sicaria
+    [phone] => 8299129914
+    [checkInDate] => 2025-03-13
+    [checkOutDate] => 2025-03-13
+    [guestCount] => 11
+    [comments] => sdsadsadasdasd
+    [status] => Pending
+)
+
+Conexión establecida
+ID: 0, Nombre: Luisangel sicaria, Teléfono: 8299129914, Status: Pending
+Consulta preparada
+Actualización exitosa
+Fin del proceso
+
+Request recibido: 2025-03-12 22:10:13
+POST data: Array
+(
+    [reservationId] => 1
+    [clientName] => Luisangel Ra
+    [phone] => 829 912 9914
+    [checkInDate] => 2025-03-04
+    [checkOutDate] => 2025-03-12
+    [guestCount] => 2
+    [comments] => si que si soy el mejor
+    [status] => Confirmed
+)
+
+Conexión establecida
+ID: 1, Nombre: Luisangel Ra, Teléfono: 829 912 9914, Status: Confirmed
+Consulta preparada
+Actualización exitosa
+Fin del proceso
+
+Request recibido: 2025-03-12 22:20:28
+POST data: Array
+(
+    [reservationId] => 
+    [clientName] => Luisangel gantel
+    [property] => luxe house sicaria
+    [phone] => 8299129914
+    [reservationType] => villa
+    [checkInDate] => 2025-03-14
+    [checkOutDate] => 2025-03-20
+    [guestCount] => 22
+    [comments] => sdasdsadsadasdas
+    [total] => 10000
+    [status] => Pending
+)
+
+Conexión establecida
+ID: 0, Nombre: Luisangel gantel, Teléfono: 8299129914, Status: Pending
+Consulta preparada
+Actualización exitosa
+Fin del proceso
+
+Request recibido: 2025-03-12 22:21:56
+POST data: Array
+(
+    [reservationId] => 
+    [clientName] => Luisangel gantel
+    [property] => luxe house sicaria
+    [phone] => 8299129914
+    [reservationType] => villa
+    [checkInDate] => 2025-03-13
+    [checkOutDate] => 2025-03-20
+    [guestCount] => 2
+    [comments] => sadsadsa
+    [total] => 1000
+    [status] => Confirmed
+)
+
+Conexión establecida
+ID: 0, Nombre: Luisangel gantel, Teléfono: 8299129914, Status: Confirmed
+Consulta preparada
+Actualización exitosa
+Fin del proceso
+
+Request recibido: 2025-03-12 22:23:01
+POST data: Array
+(
+    [reservationId] => 11
+    [clientName] => Luisangel gant
+    [property] => luxe house sicaria
+    [phone] => 8299129914
+    [reservationType] => villa
+    [checkInDate] => 2025-03-13
+    [checkOutDate] => 2025-03-20
+    [guestCount] => 2
+    [comments] => sadsadsa
+    [total] => 1000.00
+    [status] => Confirmed
+)
+
+Conexión establecida
+ID: 11, Nombre: Luisangel gant, Teléfono: 8299129914, Status: Confirmed
+Consulta preparada
+Actualización exitosa
+Fin del proceso
+

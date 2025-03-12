@@ -1,3 +1,15 @@
+<?php
+include 'PHP/conexion.php';
+
+// Realizar consulta a la base de datos
+$sql = "SELECT * FROM productos";
+$result = $conn->query($sql);
+
+// Verificar si la consulta fue exitosa
+if ($result === false) {
+    die("Error en la consulta: " . $conn->error);
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -32,7 +44,7 @@
                 </svg>
                 Dashboard
             </a>
-            <a href="properties.php" class="nav-item active">
+            <a href="propiedades.php" class="nav-item active">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -80,63 +92,263 @@
     </aside>
 
     <!-- Main Content -->
-    <main class="main-content">
+     <main class="main-content">
         <div class="header">
             <h1>Property Management</h1>
         </div>
 
+        <!-- Success/Error Messages -->
+        <?php if(isset($_GET['msg']) && $_GET['msg'] == 'success'): ?>
+        <div class="alert alert-success">
+            Operation completed successfully!
+        </div>
+        <?php elseif(isset($_GET['msg']) && $_GET['msg'] == 'error'): ?>
+        <div class="alert alert-danger">
+            An error occurred. Please try again.
+        </div>
+        <?php endif; ?>
+
         <div class="card">
             <div class="card-header">
                 <h2 class="card-title">Properties List</h2>
-                <button class="btn btn-primary">Add Property</button>
+                <button class="btn btn-primary" id="openAddModal">Add Property</button>
             </div>
             
-            <div class="properties-grid">
-                <div class="property-card">
-                    <img src="../ParteUsuario/img/Apartamento_3.jpeg" alt="Modern Luxury Apartment" class="property-image">
-                    <div class="property-details">
-                        <div class="property-title">
-                            Modern Luxury Apartment
-                            <span class="property-tag for-sale">For Sale</span>
-                        </div>
-                        <div class="property-location">Downtown</div>
-                        <div class="property-price">$750,000</div>
-                        <div class="property-features">
-                            <span>3 beds</span>
-                            <span>2 baths</span>
-                            <span>1500 sqft</span>
-                        </div>
-                        <div class="property-actions">
-                            <a href="#" class="edit-link">Edit</a>
-                            <a href="#" class="delete-link">Delete</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="property-card">
-                    <img src="../ParteUsuario/img/Villa_2.jpg" alt="Beachfront Villa" class="property-image">
-                    <div class="property-details">
-                        <div class="property-title">
-                            Beachfront Villa
-                            <span class="property-tag for-rent">For Rent</span>
-                        </div>
-                        <div class="property-location">Coastal Area</div>
-                        <div class="property-price">$4500/month</div>
-                        <div class="property-features">
-                            <span>4 beds</span>
-                            <span>3 baths</span>
-                            <span>2200 sqft</span>
-                        </div>
-                        <div class="property-actions">
-                            <a href="#" class="edit-link">Edit</a>
-                            <a href="#" class="delete-link">Delete</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="table-responsive">
+                <table class="properties-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Bedrooms</th>
+                            <th>Bathrooms</th>
+                            <th>Price</th>
+                            <th>Operation</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if ($result->num_rows > 0): ?>
+                            <?php while($row = $result->fetch_assoc()): ?>
+                                <tr>
+                                    <td><?= $row['id'] ?></td>
+                                    <td>
+                                        <img src="<?= $row['imagen'] ?>" alt="<?= $row['nombre'] ?>" class="property-thumbnail">
+                                    </td>
+                                    <td><?= $row['nombre'] ?></td>
+                                    <td><?= ucfirst($row['categoria']) ?></td>
+                                    <td><?= $row['habitaciones'] ?></td>
+                                    <td><?= $row['banos'] ?></td>
+                                    <td>$<?= number_format($row['precio'], 2) ?></td>
+                                    <td>
+                                        <span class="badge <?= $row['operacion'] == 'venta' ? 'badge-sale' : 'badge-rent' ?>">
+                                            <?= $row['operacion'] == 'venta' ? 'For Sale' : 'For Rent' ?>
+                                        </span>
+                                    </td>
+                                    <td class="actions">
+                                        <button class="btn btn-icon btn-edit" 
+                                                onclick="openEditModal(<?= $row['id'] ?>, '<?= htmlspecialchars($row['nombre'], ENT_QUOTES) ?>', 
+                                                '<?= htmlspecialchars($row['descripcion'], ENT_QUOTES) ?>', '<?= $row['imagen'] ?>', 
+                                                '<?= $row['categoria'] ?>', <?= $row['habitaciones'] ?>, <?= $row['banos'] ?>, 
+                                                <?= $row['precio'] ?>, '<?= $row['operacion'] ?>', '<?= htmlspecialchars($row['ubicacion'] ?? '', ENT_QUOTES) ?>')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                            </svg>
+                                        </button>
+                                        <button class="btn btn-icon btn-delete" onclick="confirmDelete(<?= $row['id'] ?>)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="3 6 5 6 21 6"></polyline>
+                                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                                <line x1="10" y1="11" x2="10" y2="17"></line>
+                                                <line x1="14" y1="11" x2="14" y2="17"></line>
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                            <?php endwhile; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="9" class="no-data">No properties found. Add your first property!</td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </main>
+   
+    <!-- Add Property Modal -->
+    <div class="modal" id="addPropertyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Agregar una nueva propiedad</h2>
+                    <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form action="php/add_property.php" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="nombre">Property Name</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
 
-    <script src="js/properties.js"></script>
+                    <div class="form-group">
+                        <label for="descripcion">Description</label>
+                        <textarea id="descripcion" name="descripcion" rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="imagen">Image</label>
+                        <input type="file" id="imagen" name="imagen" accept="image/*" required>
+                        <small>Recommended size: 800x600px</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="categoria">Category</label>
+                        <select id="categoria" name="categoria" required>
+                            <option value="">Select category</option>
+                            <option value="villa">Villa</option>
+                            <option value="apartamento">Apartment</option>
+                            <option value="casa">House</option>
+                            <option value="condominio">Condo</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="habitaciones">Bedrooms</label>
+                            <input type="number" id="habitaciones" name="habitaciones" min="1" required>
+                        </div>
+
+                        <div class="form-group half">
+                            <label for="banos">Bathrooms</label>
+                            <input type="number" id="banos" name="banos" min="1" step="0.5" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="precio">Price</label>
+                            <input type="number" id="precio" name="precio" min="0" step="0.01" required>
+                        </div>
+
+                        <div class="form-group half">
+                            <label for="operacion">Operation</label>
+                            <select id="operacion" name="operacion" required>
+                                <option value="">Select operation</option>
+                                <option value="venta">For Sale</option>
+                                <option value="renta">For Rent</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ubicacion">Location</label>
+                        <input type="text" id="ubicacion" name="ubicacion" required>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary close-modal-btn">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Add Property</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- editar modal -->
+
+    <!-- Edit Property Modal -->
+    <div class="modal" id="editPropertyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Property</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form action="php/update_property.php" method="post" enctype="multipart/form-data">
+                    <input type="hidden" id="edit_id" name="id">
+
+                    <div class="form-group">
+                        <label for="edit_nombre">Property Name</label>
+                        <input type="text" id="edit_nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit_descripcion">Description</label>
+                        <textarea id="edit_descripcion" name="descripcion" rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit_imagen">Current Image</label>
+                        <div class="current-image-container">
+                            <img id="current_image_preview" src="" alt="Current Property Image">
+                            <input type="hidden" id="current_image" name="current_image">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit_imagen_nueva">Change Image (optional)</label>
+                        <input type="file" id="edit_imagen_nueva" name="imagen_nueva" accept="image/*">
+                        <small>Leave empty to keep current image</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit_categoria">Category</label>
+                        <select id="edit_categoria" name="categoria" required>
+                            <option value="villa">Villa</option>
+                            <option value="apartamento">Apartment</option>
+                            <option value="casa">House</option>
+                            <option value="condominio">Condo</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="edit_habitaciones">Bedrooms</label>
+                            <input type="number" id="edit_habitaciones" name="habitaciones" min="1" required>
+                        </div>
+
+                        <div class="form-group half">
+                            <label for="edit_banos">Bathrooms</label>
+                            <input type="number" id="edit_banos" name="banos" min="1" step="0.5" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="edit_precio">Price</label>
+                            <input type="number" id="edit_precio" name="precio" min="0" step="0.01" required>
+                        </div>
+
+                        <div class="form-group half">
+                            <label for="edit_operacion">Operation</label>
+                            <select id="edit_operacion" name="operacion" required>
+                                <option value="venta">For Sale</option>
+                                <option value="renta">For Rent</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit_ubicacion">Location</label>
+                        <input type="text" id="edit_ubicacion" name="ubicacion" required>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary close-modal-btn">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Update Property</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/propiedades.js"></script>
 </body>
+
 </html>

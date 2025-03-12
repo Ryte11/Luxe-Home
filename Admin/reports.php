@@ -1,3 +1,25 @@
+<?php
+include 'PHP/conexion.php';
+
+// Consulta para obtener la cantidad de reportes
+$sqlCantidadReportes = "SELECT COUNT(*) AS cantidad_reportes FROM contacts";
+$resultCantidadReportes = $conn->query($sqlCantidadReportes);
+$cantidadReportes = $resultCantidadReportes->fetch_assoc()['cantidad_reportes'];
+
+// Consulta para obtener el promedio de reportes por semana
+$sqlPromedioReportes = "SELECT AVG(reportes_por_semana) AS promedio_reportes FROM (
+    SELECT COUNT(*) AS reportes_por_semana
+    FROM contacts
+    GROUP BY YEARWEEK(fecha_envio)
+) AS subquery";
+$resultPromedioReportes = $conn->query($sqlPromedioReportes);
+$promedioReportes = $resultPromedioReportes->fetch_assoc()['promedio_reportes'];
+
+// Consulta para obtener una métrica inventada para transacciones (por ejemplo, cantidad de usuarios únicos que han enviado reportes)
+$sqlCantidadUsuariosUnicos = "SELECT COUNT(DISTINCT correo) AS cantidad_usuarios_unicos FROM contacts";
+$resultCantidadUsuariosUnicos = $conn->query($sqlCantidadUsuariosUnicos);
+$cantidadUsuariosUnicos = $resultCantidadUsuariosUnicos->fetch_assoc()['cantidad_usuarios_unicos'];
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -40,7 +62,7 @@
                 </svg>
                 Propiedades
             </a>
-            <a href="reservaciones.php" class="nav-item">
+            <a href="reservasiones.php" class="nav-item">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -110,8 +132,8 @@
                             </svg>
                         </div>
                         <div>
-                            <div class="stat-number">$2,500,000</div>
-                            <div class="stat-label">Ventas Totales</div>
+                            <div class="stat-number"><?= $cantidadReportes ?></div>
+                            <div class="stat-label">Cantidad de Reportes</div>
                             <div class="stat-change positive">+15% vs periodo anterior</div>
                         </div>
                     </div>
@@ -125,8 +147,8 @@
                             </svg>
                         </div>
                         <div>
-                            <div class="stat-number">24</div>
-                            <div class="stat-label">Transacciones</div>
+                            <div class="stat-number"><?= $cantidadUsuariosUnicos ?></div>
+                            <div class="stat-label">Usuarios Únicos</div>
                             <div class="stat-change positive">+8% vs periodo anterior</div>
                         </div>
                     </div>
@@ -142,9 +164,9 @@
                             </svg>
                         </div>
                         <div>
-                            <div class="stat-number">$104,166</div>
-                            <div class="stat-label">Valor Promedio</div>
-                            <div class="stat-change positive">+5% vs periodo anterior</div>
+                            <div class="stat-number"><?= number_format($promedioReportes, 2) ?></div>
+                            <div class="stat-label">Promedio de Reportes por Semana</div>
+                            <div class="stat-change positive">+5% vs Semana anterior</div>
                         </div>
                     </div>
                 </div>
@@ -155,7 +177,7 @@
         <div class="card">
             <div class="card-header">
                 <h2 class="card-title">Reporte de Ventas</h2>
-                <button id="downloadReport" class="download-btn">
+                <button id="downloadContactReport" class="download-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -170,79 +192,81 @@
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>Cliente</th>
+                                <th>ID</th>
+                                <th>Nombre</th>
                                 <th>Email</th>
-                                <th>Propiedad</th>
+                                <th>Teléfono</th>
+                                <th>Mensaje</th>
                                 <th>Fecha</th>
-                                <th>Tipo</th>
-                                <th>Monto</th>
                                 <th>Estado</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Carlos Mendoza</td>
-                                <td>carlos@example.com</td>
-                                <td>Modern Luxury Apartment</td>
-                                <td>15/02/2024</td>
-                                <td>Venta</td>
-                                <td>$750,000</td>
-                                <td><span class="status-badge completed">Completado</span></td>
-                            </tr>
-                            <tr>
-                                <td>Laura González</td>
-                                <td>laura@example.com</td>
-                                <td>Beachfront Villa</td>
-                                <td>03/03/2024</td>
-                                <td>Renta</td>
-                                <td>$4,500/mes</td>
-                                <td><span class="status-badge active">Activo</span></td>
-                            </tr>
-                            <tr>
-                                <td>Miguel Torres</td>
-                                <td>miguel@example.com</td>
-                                <td>Urban Penthouse</td>
-                                <td>22/02/2024</td>
-                                <td>Venta</td>
-                                <td>$950,000</td>
-                                <td><span class="status-badge pending">Pendiente</span></td>
-                            </tr>
-                            <tr>
-                                <td>Ana Martínez</td>
-                                <td>ana@example.com</td>
-                                <td>Suburban House</td>
-                                <td>05/03/2024</td>
-                                <td>Venta</td>
-                                <td>$650,000</td>
-                                <td><span class="status-badge completed">Completado</span></td>
-                            </tr>
-                            <tr>
-                                <td>Roberto Sánchez</td>
-                                <td>roberto@example.com</td>
-                                <td>Mountain Retreat</td>
-                                <td>18/01/2024</td>
-                                <td>Renta</td>
-                                <td>$3,800/mes</td>
-                                <td><span class="status-badge active">Activo</span></td>
-                            </tr>
-                            <tr>
-                                <td>Sofía Ramírez</td>
-                                <td>sofia@example.com</td>
-                                <td>City Loft</td>
-                                <td>10/02/2024</td>
-                                <td>Venta</td>
-                                <td>$520,000</td>
-                                <td><span class="status-badge completed">Completado</span></td>
-                            </tr>
-                            <tr>
-                                <td>Javier López</td>
-                                <td>javier@example.com</td>
-                                <td>Garden Apartment</td>
-                                <td>25/02/2024</td>
-                                <td>Renta</td>
-                                <td>$2,900/mes</td>
-                                <td><span class="status-badge active">Activo</span></td>
-                            </tr>
+                            <?php
+                            // Incluir archivo de conexión
+                            include 'PHP/conexion.php';
+
+                            // Consulta para obtener mensajes de contacto
+                            $sql = "SELECT * FROM contacts ORDER BY fecha_envio DESC";
+                            $result = $conn->query($sql);
+
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    $mensaje_corto = strlen($row["mensaje"]) > 50 ? substr($row["mensaje"], 0, 50) . "..." : $row["mensaje"];
+
+                                    // Definir el estado (puedes adaptarlo según tus necesidades)
+                                    $estado = isset($row["estado"]) ? $row["estado"] : "No leído";
+                                    $estado_clase = "";
+
+                                    switch ($estado) {
+                                        case "Leído":
+                                            $estado_clase = "completed";
+                                            break;
+                                        case "En proceso":
+                                            $estado_clase = "active";
+                                            break;
+                                        default:
+                                            $estado_clase = "pending";
+                                            break;
+                                    }
+
+                                    echo "<tr>
+                                <td>" . $row["id"] . "</td>
+                                <td>" . htmlspecialchars($row["nombre"]) . "</td>
+                                <td>" . htmlspecialchars($row["correo"]) . "</td>
+                                <td>" . htmlspecialchars($row["telefono"]) . "</td>
+                                <td class='mensaje-celda'>
+                                    <span class='mensaje-corto'>" . htmlspecialchars($mensaje_corto) . "</span>
+                                    <div class='mensaje-completo'>
+                                        <div class='mensaje-contenido'>" . nl2br(htmlspecialchars($row["mensaje"])) . "</div>
+                                    </div>
+                                    " . (strlen($row["mensaje"]) > 50 ? "<button class='ver-mas-btn' data-id='" . $row["id"] . "'>Ver más</button>" : "") . "
+                                </td>
+                                <td>" . date('d/m/Y H:i', strtotime($row["fecha_envio"])) . "</td>
+                                <td><span class='status-badge " . $estado_clase . "'>" . $estado . "</span></td>
+                                <td class='action-btn'>
+                                    <button class='marcar-btn' data-id='" . $row["id"] . "' data-action='marcar'>
+                                        <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+                                            <polyline points='20 6 9 17 4 12'></polyline>
+                                        </svg>
+                                    </button>
+                                    <button class='eliminar-btn' data-id='" . $row["id"] . "' data-action='eliminar'>
+                                        <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+                                            <polyline points='3 6 5 6 21 6'></polyline>
+                                            <path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'></path>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>";
+                                }
+                            } else {
+                                echo "<tr><td colspan='8' class='no-data'>No hay mensajes de contacto.</td></tr>";
+                            }
+
+                            // Cerrar conexión
+                            $conn->close();
+                            ?>
                         </tbody>
                     </table>
                 </div>
@@ -268,7 +292,8 @@
             </div>
         </div>
     </main>
-
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>                       
     <script src="js/reports.js"></script>
 </body>
 

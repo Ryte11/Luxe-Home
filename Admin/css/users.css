@@ -108,7 +108,24 @@ tbody tr:hover {
 .btn-delete:hover {
     background-color: #ffcdd2;
 }
+/* Download Button */
+.download-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #4a6cf7;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
 
+.download-btn:hover {
+    background-color: #3959d9;
+}
 /* Modal Styles */
 .modal {
     display: none;
@@ -324,4 +341,113 @@ select  {
     #addUserBtn {
         width: 100%;
     }
+}
+
+
+
+/* css del buscador */
+.buscador{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    gap: 30px;
+}
+
+.search-container {
+    position: relative;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    color: #555;
+}
+
+.user-search {
+    padding: 8px 10px 8px 35px !important;
+    border: 1px solid #b1b1b1;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 250px !important;
+    transition: border-color 0.3s;
+}
+
+.user-search:focus {
+    outline: none;
+    border-color: #4e73df;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .search-container {
+        margin: 10px 0;
+        width: 100%;
+    }
+    
+    .user-search {
+        width: 100%;
+    }
+    
+    .card-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    gap: 8px;
+}
+
+.pagination-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #eaeaea;
+    background-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination-btn:hover {
+    background-color: #f6f9fc;
+}
+
+.page-numbers {
+    display: flex;
+    gap: 8px;
+}
+
+.page-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #eaeaea;
+    background-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.page-number.active {
+    background-color: #4a6cf7;
+    color: white;
+    border-color: #4a6cf7;
 }

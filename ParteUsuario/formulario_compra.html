@@ -1,88 +1,141 @@
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/form.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Document</title>
-  </head>
-  <body>
+<!DOCTYPE html>
+<html lang="es">
 
-	<body>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+	<title>Finalizar Compra</title>
+	<link rel="stylesheet" href="css/form.css">
+	<style>
 	
-	
-    <form action="" method="" id="form" onsubmit="validacion(event)">
-      <h1 class="texto">Realiza tu compra</h1>
+	</style>
+</head>
 
-      	<div class="contenedor">
-			<div>
-			<div class="grupo">
-				<input type="text" name="" id="name" /><span></span>
-				<label for="">Nombre y apellido</label>
+<body>
+	<div class="checkout-container">
+		<!-- Sección de Carrito -->
+		<div class="carrito-section">
+			<h2>Resumen de compra</h2>
+			<div class="carrito-items" id="carrito-items">
+				<!-- Los productos del carrito se cargarán dinámicamente aquí -->
 			</div>
-			<div class="grupo">
-				<input type="email" name="" id="email" /><span></span>
-				<label for="">Email</label>
-			</div>
-			<div class="grupo">
-				<input type="number" name="" id="cedula" /><span></span>
-				<label for="">Numero de cedula</label>
-			</div>
-
-			<div class="grupo">
-				<input type="text" name="" id="direccion" /><span></span>
-				<label for="">Dirección de recidencia</label>
-			</div>
-			</div>
-
-			<div>
-				<div class="grupo">
-					<input type="number" name="" id="num" /><span></span>
-					<label for="">Numero telefonico</label>
+			<div class="resumen-compra">
+				<div class="resumen-item">
+					<span>Subtotal:</span>
+					<span id="subtotal-precio">$0</span>
 				</div>
-				<div class="grupo">
-					<input type="text" name="" id="codigo"/><span></span>
-					<label for="">Codigo postal</label>
+				<div class="resumen-item">
+					<span>Impuestos:</span>
+					<span id="impuestos-precio">$0</span>
 				</div>
-				<div class="grupo">
-					<input type="number" name="" id="cuenta" /><span></span>
-					<label for="">Numero de cuenta de pago</label>
+				<div class="resumen-item total-row">
+					<span>Total:</span>
+					<span id="total-precio">$0</span>
 				</div>
+			</div>
+		</div>
 
-				<div class="grupo-1" style="display: flex;">
-					<div class="contenedor-1">
-						<select name="metodo_de_pago" id="metodo_pago">
-							<option value="Visa">Transferencia b.</option>
-							<option value="Visa">Efectivo</option>
-							<option value="Visa">Criptomoneda</option>
-							<option value="Vsia">Credito</option>
-						</select>
-						<label for="" class="label-1">Metodo de pago</label>
+		<!-- Sección de Formulario -->
+		<div class="form-section">
+			<form action="PHP/procesar_reserva.php" method="POST" id="form">
+				<h1 class="texto">Realiza tu Reserva</h1>
+			
+				<div class="contenedor">
+					<div>
+						<div class="grupo">
+							<input type="text" name="name" id="name" />
+							<label for="name">Nombre y apellido</label>
+							<p class="error-msg" id="name-error"></p>
+						</div>
+						<div class="grupo">
+							<input type="email" name="email" id="email" />
+							<label for="email">Email</label>
+							<p class="error-msg" id="email-error"></p>
+						</div>
+						<div class="grupo">
+							<input type="number" name="cedula" id="cedula" />
+							<label for="cedula">Número de cédula</label>
+							<p class="error-msg" id="cedula-error"></p>
+						</div>
+						<div class="grupo">
+							<input type="text" name="direccion" id="direccion" />
+							<label for="direccion">Dirección de residencia</label>
+							<p class="error-msg" id="direccion-error"></p>
+						</div>
 					</div>
-
-
-					<div class="contenedor-2">
-						<select name="Tipo_de_casa" id="tipo_casa">
-							<option value="Visa">Tipo de casa</option>
-							<option value="Visa">Villa</option>
-							<option value="Visa">Casa</option>
-							
-						</select>
-						<label for="" class="label-2">Tipo de casa</label>
+			
+					<div>
+						<div class="grupo">
+							<input type="number" name="num" id="num" />
+							<label for="num">Número telefónico</label>
+							<p class="error-msg" id="num-error"></p>
+						</div>
+						<div class="grupo">
+							<input type="text" name="codigo" id="codigo" />
+							<label for="codigo">Código postal</label>
+							<p class="error-msg" id="codigo-error"></p>
+						</div>
+						<div class="grupo">
+							<input type="date" name="fecha_entrada" id="fecha_entrada" />
+							<label for="fecha_entrada" class="date-label">Fecha de entrada</label>
+							<p class="error-msg" id="fecha_entrada-error"></p>
+						</div>
+						<div class="grupo">
+							<input type="date" name="fecha_salida" id="fecha_salida" />
+							<label for="fecha_salida" class="date-label">Fecha de salida</label>
+							<p class="error-msg" id="fecha_salida-error"></p>
+						</div>
 					</div>
 				</div>
 			
-			</div>
-      	</div>
+				<div class="contenedor-opciones">
+					<div class="grupo-1">
+						<div class="contenedor-1">
+							<select name="metodo_de_pago" id="metodo_pago">
+								<option value="">Seleccione método</option>
+								<option value="Transferencia">Transferencia bancaria</option>
+								<option value="Efectivo">Efectivo</option>
+								<option value="Criptomoneda">Criptomoneda</option>
+								<option value="Credito">Tarjeta de crédito</option>
+							</select>
+							<label for="metodo_pago" class="label-1">Método de pago</label>
+							<p class="error-msg" id="metodo_pago-error"></p>
+						</div>
+			
+						<div class="contenedor-2">
+							<select name="tipo_de_casa" id="tipo_casa">
+								<option value="">Seleccione tipo</option>
+								<option value="Villa">Villa</option>
+								<option value="Casa">Casa</option>
+							</select>
+							<label for="tipo_casa" class="label-2">Tipo de propiedad</label>
+							<p class="error-msg" id="tipo_casa-error"></p>
+						</div>
+					</div>
+			
+					<div class="grupo">
+						<input type="number" name="num_huespedes" id="num_huespedes" />
+						<label for="num_huespedes">Número de huéspedes</label>
+						<p class="error-msg" id="num_huespedes-error"></p>
+					</div>
+			
+					<div class="grupo">
+						<textarea name="comentarios" id="comentarios" rows="3"
+							placeholder="Comentarios o requisitos especiales"></textarea>
+						<p class="error-msg" id="comentarios-error"></p>
+					</div>
+				</div>
+				<input type="hidden" name="total" id="total" />
+				<div class="message-container" id="message-container"></div>
+				<button type="submit">Realizar Reserva</button>
+			</form>
 
-      <button type="submit">Realizar Reserva</button>
-      
-    </form>
+		</div>
+	</div>
+	<script src="js/form_compra.js"></script>
 
-	<script src="js/form.js"></script>
-  </body>
+</body>
+
 </html>

@@ -77,6 +77,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const phone = document.getElementById('userPhone').value;
 
             // Send data to the backend
+            const dataToSend = { name, email, password, role, phone };
+            console.log("Enviando datos:", dataToSend);
             fetch('php/add_user.php', {
                 method: 'POST',
                 headers: {
@@ -92,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Close the modal and reset form
                     closeAllModals();
                     this.reset();
+                    window.location.reload();
                 } else {
                     alert(data.message);
                 }
@@ -125,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     updateUserInTable(userId, name, email, role);
                     // Close the modal
                     closeAllModals();
+                    window.location.reload();
                 } else {
                     alert(data.message);
                 }
@@ -148,8 +152,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (data.success) {
                     // Remove user from the table (for demonstration)
                     deleteUserFromTable(currentUserId);
-                    // Close the modal
                     closeAllModals();
+                    window.location.reload();
                 } else {
                     alert(data.message);
                 }
@@ -215,41 +219,50 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function validateForm(form) {
         let isValid = true;
+
         const name = form.querySelector('[name="userName"]') || form.querySelector('[name="editUserName"]');
         const email = form.querySelector('[name="userEmail"]') || form.querySelector('[name="editUserEmail"]');
-        const password = form.querySelector('[name="userPassword"]') || form.querySelector('[name="editUserPassword"]');
+        const password = form.querySelector('[name="userPassword"]'); // Solo buscará en el formulario de agregar
         const role = form.querySelector('[name="userRole"]') || form.querySelector('[name="editUserRole"]');
+
+        console.log("Validando formulario...");
+        console.log("Nombre:", name?.value);
+        console.log("Email:", email?.value);
+        console.log("Password:", password?.value);
+        console.log("Rol:", role?.value);
 
         if (name && name.value.trim() === '') {
             isValid = false;
-            name.nextElementSibling.textContent = 'Name is required';
+            name.nextElementSibling.textContent = 'El nombre es obligatorio';
         } else {
-            name.nextElementSibling.textContent = '';
+            name?.nextElementSibling && (name.nextElementSibling.textContent = '');
         }
 
         if (email && email.value.trim() === '') {
             isValid = false;
-            email.nextElementSibling.textContent = 'Email is required';
+            email.nextElementSibling.textContent = 'El email es obligatorio';
         } else {
-            email.nextElementSibling.textContent = '';
+            email?.nextElementSibling && (email.nextElementSibling.textContent = '');
         }
 
         if (password && password.value.trim() === '') {
             isValid = false;
-            password.nextElementSibling.textContent = 'Password is required';
-        } else {
+            password.nextElementSibling.textContent = 'La contraseña es obligatoria';
+        } else if (password) {
             password.nextElementSibling.textContent = '';
         }
 
         if (role && role.value.trim() === '') {
             isValid = false;
-            role.nextElementSibling.textContent = 'Role is required';
+            role.nextElementSibling.textContent = 'El rol es obligatorio';
         } else {
-            role.nextElementSibling.textContent = '';
+            role?.nextElementSibling && (role.nextElementSibling.textContent = '');
+
         }
 
-        return isValid;
+            return isValid;
     }
+
 
     function resetForm(form) {
         form.reset();
@@ -299,4 +312,134 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+
+
+
+    // buscador js
+
+    
+});
+
+// Add this code to your existing user.js file or create a new function
+document.addEventListener('DOMContentLoaded', function () {
+    // Get the existing elements
+    const cardHeader = document.querySelector('.card-header');
+    const cardTitle = document.querySelector('.card-title');
+    
+    // Create search input
+    const searchContainer = document.createElement('div');
+    searchContainer.className = 'search-container';
+    
+    const searchInput = document.createElement('input');
+    searchInput.type = 'text';
+    searchInput.id = 'userSearch';
+    searchInput.className = 'user-search';
+    searchInput.placeholder = 'Search users...';
+    
+    const searchIcon = document.createElement('span');
+    searchIcon.className = 'search-icon';
+    searchIcon.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+    `;
+    
+    // Add the search elements to the container
+    searchContainer.appendChild(searchIcon);
+    searchContainer.appendChild(searchInput);
+    
+    // Insert search container after the card title
+    cardTitle.parentNode.insertBefore(searchContainer, cardTitle.nextSibling);
+    
+    // Add the search functionality
+    searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        const rows = document.querySelectorAll('.users-table tbody tr');
+        
+        rows.forEach(row => {
+            // Get all text content from the row (name, email, role)
+            const name = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
+            const email = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+            const role = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+            
+            // Check if any column contains the search term
+            const matchFound = 
+                name.includes(searchTerm) || 
+                email.includes(searchTerm) || 
+                role.includes(searchTerm);
+                
+            row.style.display = matchFound ? '' : 'none';
+        });
+    });
+    
+    // Clear search when role filter changes
+    const roleFilter = document.getElementById('roleFilter');
+    if (roleFilter) {
+        roleFilter.addEventListener('change', function() {
+            searchInput.value = '';
+            // Trigger the input event to clear search filtering
+            searchInput.dispatchEvent(new Event('input'));
+        });
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const rowsPerPage = 15;
+    const rows = document.querySelectorAll('.users-table tbody tr');
+    const totalPages = Math.ceil(rows.length / rowsPerPage);
+    const paginationContainer = document.querySelector('.pagination .page-numbers');
+
+    let currentPage = 1;
+
+    function displayRows(page) {
+        const start = (page - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+
+        rows.forEach((row, index) => {
+            row.style.display = (index >= start && index < end) ? '' : 'none';
+        });
+    }
+
+    function updatePagination() {
+        paginationContainer.innerHTML = '';
+
+        for (let i = 1; i <= totalPages; i++) {
+            const pageButton = document.createElement('button');
+            pageButton.className = 'page-number';
+            pageButton.textContent = i;
+            if (i === currentPage) {
+                pageButton.classList.add('active');
+            }
+            pageButton.addEventListener('click', function() {
+                currentPage = i;
+                displayRows(currentPage);
+                updatePagination();
+            });
+            paginationContainer.appendChild(pageButton);
+        }
+    }
+
+    document.querySelector('.pagination .prev').addEventListener('click', function() {
+        if (currentPage > 1) {
+            currentPage--;
+            displayRows(currentPage);
+            updatePagination();
+        }
+    });
+
+    document.querySelector('.pagination .next').addEventListener('click', function() {
+        if (currentPage < totalPages) {
+            currentPage++;
+            displayRows(currentPage);
+            updatePagination();
+        }
+    });
+
+    // Initialize the table with the first page
+    displayRows(currentPage);
+    updatePagination();
 });

@@ -94,7 +94,10 @@ $result = $conn->query($query);
 
         <div class="card">
             <div class="card-header">
-                <h2 class="card-title">Users List</h2>
+                <div class="buscador">
+                    <h2 class="card-title">Users List</h2>
+                
+                </div>
                 <div class="card-actions">
                     <div class="filter-container">
                         <select id="roleFilter" class="role-filter">
@@ -103,6 +106,15 @@ $result = $conn->query($query);
                             <option value="usuario">usuario</option>
                         </select>
                     </div>
+                    <button id="downloadContactReport" class="download-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Descargar Reporte
+                    </button>
                     <button class="btn btn-primary" id="addUserBtn">Add User</button>
                 </div>
             </div>
@@ -128,9 +140,28 @@ $result = $conn->query($query);
                                     <button class="btn-delete" data-id="<?= $row['id'] ?>">Delete</button>
                                 </td>
                             </tr>
-                        <?php endwhile;?>
+                        <?php endwhile; ?>
                     </tbody>
                 </table>
+            </div>
+            <div class="pagination">
+                    <button class="pagination-btn prev">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <div class="page-numbers">
+                        <button class="page-number active">1</button>
+                        <button class="page-number">2</button>
+                        <button class="page-number">3</button>
+                    </div>
+                    <button class="pagination-btn next">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
             </div>
         </div>
     </main>
@@ -155,7 +186,7 @@ $result = $conn->query($query);
                 </div>
                 <div class="form-group">
                     <label for="userPassword">Password <span class="required">*</span></label>
-                    <input type="password" id="userPassword" name="userPassword" required>
+                    <input type="password" id="userPassword" name="userPassword">
                     <span class="error-message" id="passwordError"></span>
                 </div>
                 <div class="form-group">
@@ -244,7 +275,35 @@ $result = $conn->query($query);
             </div>
         </div>
     </div>
+    <!-- Add this in your HTML head section -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add the download button listener
+            const downloadBtn = document.getElementById('downloadBtn') ||
+                document.getElementById('downloadContactReport');
+
+            if (downloadBtn) {
+                downloadBtn.addEventListener('click', function () {
+                    exportTableToExcel();
+                });
+            }
+
+            function exportTableToExcel() {
+                // Get the table element
+                const table = document.querySelector('table');
+                const wb = XLSX.utils.book_new();
+
+                const ws = XLSX.utils.table_to_sheet(table);
+
+                XLSX.utils.book_append_sheet(wb, ws, "Estudiantes");
+
+                // GGenera el excel con ese nombre
+                XLSX.writeFile(wb, "estudiantes.xlsx");
+            }
+        });
+    </script>
     <script src="js/user.js"></script>
 </body>
 

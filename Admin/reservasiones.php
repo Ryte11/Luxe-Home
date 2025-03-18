@@ -195,7 +195,7 @@ $valorPromedio = $resultValorPromedio->fetch_assoc()['valor_promedio'];
             </div>
 
             <div class="reservations-table">
-                <table>
+                <table class="reservaciones-table">
                     <thead>
                         <tr>
                             <th>Cliente</th>

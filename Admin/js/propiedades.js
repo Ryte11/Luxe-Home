@@ -50,3 +50,62 @@
                 }
             }
         });
+
+// pagination
+
+document.addEventListener('DOMContentLoaded', function() {
+    const rowsPerPage = 10;
+    const rows = document.querySelectorAll('.properties-table tbody tr');
+    const totalPages = Math.ceil(rows.length / rowsPerPage);
+    const paginationContainer = document.querySelector('.pagination .page-numbers');
+
+    let currentPage = 1;
+
+    function displayRows(page) {
+        const start = (page - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+
+        rows.forEach((row, index) => {
+            row.style.display = (index >= start && index < end) ? '' : 'none';
+        });
+    }
+
+    function updatePagination() {
+        paginationContainer.innerHTML = '';
+
+        for (let i = 1; i <= totalPages; i++) {
+            const pageButton = document.createElement('button');
+            pageButton.className = 'page-number';
+            pageButton.textContent = i;
+            if (i === currentPage) {
+                pageButton.classList.add('active');
+            }
+            pageButton.addEventListener('click', function() {
+                currentPage = i;
+                displayRows(currentPage);
+                updatePagination();
+            });
+            paginationContainer.appendChild(pageButton);
+        }
+    }
+
+    document.querySelector('.pagination .prev').addEventListener('click', function() {
+        if (currentPage > 1) {
+            currentPage--;
+            displayRows(currentPage);
+            updatePagination();
+        }
+    });
+
+    document.querySelector('.pagination .next').addEventListener('click', function() {
+        if (currentPage < totalPages) {
+            currentPage++;
+            displayRows(currentPage);
+            updatePagination();
+        }
+    });
+
+    // Initialize the table with the first page
+    displayRows(currentPage);
+    updatePagination();
+});

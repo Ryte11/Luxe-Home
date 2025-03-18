@@ -1,4 +1,5 @@
 <?php
+// ==== DELETE_PROPERTY.PHP ====
 include 'conexion.php';
 
 // Check if form is submitted
@@ -17,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
         $delete_sql = "DELETE FROM productos WHERE id = $id";
 
         if ($conn->query($delete_sql) === TRUE) {
-            // Delete image file if it's not a default image
+            // Delete image file if it's not a default image and exists
             if (file_exists("../" . $image_path) && !strpos($image_path, "Fondo")) {
                 unlink("../" . $image_path);
             }

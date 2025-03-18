@@ -266,7 +266,7 @@ if ($result === false) {
           <h3><?= ucfirst($row['operacion']) ?></h3>
         </div>
         <a type="button" class="img-boton" onclick="vermas1()">
-          <img src="<?= $row['imagen'] ?>" alt="" class="img-carta" />
+          <img src="../Admin/<?= $row['imagen'] ?>" alt="" class="img-carta" />
         </a>
         <div class="contenedor-icons">
           <h3 class="title-des"><?= $row['nombre'] ?></h3>
@@ -315,6 +315,7 @@ if ($result === false) {
       </div>
     <?php endwhile; ?>
   </div>
+  
  
   <footer>
     <div class="footerContainer">

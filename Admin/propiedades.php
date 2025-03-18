@@ -1,5 +1,5 @@
 <?php
-include 'PHP/conexion.php';
+include 'php/conexion.php';
 
 // Realizar consulta a la base de datos
 $sql = "SELECT * FROM productos";
@@ -92,20 +92,20 @@ if ($result === false) {
     </aside>
 
     <!-- Main Content -->
-     <main class="main-content">
+    <main class="main-content">
         <div class="header">
-            <h1>Property Management</h1>
+            <h1>Manejo de propiedades</h1>
         </div>
 
         <!-- Success/Error Messages -->
-        <?php if(isset($_GET['msg']) && $_GET['msg'] == 'success'): ?>
-        <div class="alert alert-success">
-            Operation completed successfully!
-        </div>
-        <?php elseif(isset($_GET['msg']) && $_GET['msg'] == 'error'): ?>
-        <div class="alert alert-danger">
-            An error occurred. Please try again.
-        </div>
+        <?php if (isset($_GET['msg']) && $_GET['msg'] == 'success'): ?>
+            <div class="alert alert-success">
+                Operacion completada con exito!
+            </div>
+        <?php elseif (isset($_GET['msg']) && $_GET['msg'] == 'error'): ?>
+            <div class="alert alert-danger">
+                Ha ocurrido un error porfavor intente de nuevo.
+            </div>
         <?php endif; ?>
 
         <div class="card">
@@ -113,25 +113,25 @@ if ($result === false) {
                 <h2 class="card-title">Properties List</h2>
                 <button class="btn btn-primary" id="openAddModal">Add Property</button>
             </div>
-            
+
             <div class="table-responsive">
                 <table class="properties-table">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Category</th>
-                            <th>Bedrooms</th>
-                            <th>Bathrooms</th>
-                            <th>Price</th>
-                            <th>Operation</th>
-                            <th>Actions</th>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Categoria</th>
+                            <th>habitaciones</th>
+                            <th>Baños</th>
+                            <th>Precio</th>
+                            <th>Operación</th>
+                            <th>Acción</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php if ($result->num_rows > 0): ?>
-                            <?php while($row = $result->fetch_assoc()): ?>
+                            <?php while ($row = $result->fetch_assoc()): ?>
                                 <tr>
                                     <td><?= $row['id'] ?></td>
                                     <td>
@@ -148,22 +148,26 @@ if ($result === false) {
                                         </span>
                                     </td>
                                     <td class="actions">
-                                        <button class="btn btn-icon btn-edit" 
-                                                onclick="openEditModal(<?= $row['id'] ?>, '<?= htmlspecialchars($row['nombre'], ENT_QUOTES) ?>', 
+                                        <button class="btn btn-icon btn-edit"
+                                            onclick="openEditModal(<?= $row['id'] ?>, '<?= htmlspecialchars($row['nombre'], ENT_QUOTES) ?>', 
                                                 '<?= htmlspecialchars($row['descripcion'], ENT_QUOTES) ?>', '<?= $row['imagen'] ?>', 
                                                 '<?= $row['categoria'] ?>', <?= $row['habitaciones'] ?>, <?= $row['banos'] ?>, 
                                                 <?= $row['precio'] ?>, '<?= $row['operacion'] ?>', '<?= htmlspecialchars($row['ubicacion'] ?? '', ENT_QUOTES) ?>')">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
                                                 <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
                                                 <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
                                             </svg>
                                         </button>
                                         <button class="btn btn-icon btn-delete" onclick="confirmDelete(<?= $row['id'] ?>)">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
                                                 <polyline points="3 6 5 6 21 6"></polyline>
-                                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                                <path
+                                                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                                </path>
                                                 <line x1="10" y1="11" x2="10" y2="17"></line>
                                                 <line x1="14" y1="11" x2="14" y2="17"></line>
                                             </svg>
@@ -179,15 +183,53 @@ if ($result === false) {
                     </tbody>
                 </table>
             </div>
+            <div class="pagination">
+                <button class="pagination-btn prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <div class="page-numbers">
+                    <button class="page-number active">1</button>
+                    <button class="page-number">2</button>
+                    <button class="page-number">3</button>
+                </div>
+                <button class="pagination-btn next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
         </div>
     </main>
-   
+
+    <!-- delete modal -->
+    <div class="modal" id="deleteConfirmModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Confirm Delete</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this property?</p>
+                <form action="php/delete_property.php" method="post">
+                    <input type="hidden" id="delete_id" name="id">
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary close-modal-btn">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <!-- Add Property Modal -->
     <div class="modal" id="addPropertyModal">
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Agregar una nueva propiedad</h2>
-                    <span class="close-modal">&times;</span>
+                <span class="close-modal">&times;</span>
             </div>
             <div class="modal-body">
                 <form action="php/add_property.php" method="post" enctype="multipart/form-data">
@@ -263,10 +305,11 @@ if ($result === false) {
     <!-- editar modal -->
 
     <!-- Edit Property Modal -->
+    <!-- Edit Property Modal -->
     <div class="modal" id="editPropertyModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Edit Property</h2>
+                <h2>Editar propiedad</h2>
                 <span class="close-modal">&times;</span>
             </div>
             <div class="modal-body">
@@ -274,17 +317,17 @@ if ($result === false) {
                     <input type="hidden" id="edit_id" name="id">
 
                     <div class="form-group">
-                        <label for="edit_nombre">Property Name</label>
+                        <label for="edit_nombre">Nombre de propiedad</label>
                         <input type="text" id="edit_nombre" name="nombre" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="edit_descripcion">Description</label>
+                        <label for="edit_descripcion">Descripción</label>
                         <textarea id="edit_descripcion" name="descripcion" rows="3" required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="edit_imagen">Current Image</label>
+                        <label for="edit_imagen">Imagen</label>
                         <div class="current-image-container">
                             <img id="current_image_preview" src="" alt="Current Property Image">
                             <input type="hidden" id="current_image" name="current_image">
@@ -292,56 +335,56 @@ if ($result === false) {
                     </div>
 
                     <div class="form-group">
-                        <label for="edit_imagen_nueva">Change Image (optional)</label>
+                        <label for="edit_imagen_nueva">Cambiar Imagen (opcional)</label>
                         <input type="file" id="edit_imagen_nueva" name="imagen_nueva" accept="image/*">
-                        <small>Leave empty to keep current image</small>
+                        <small>Dejar vacío para mantener la imagen actual</small>
                     </div>
 
                     <div class="form-group">
-                        <label for="edit_categoria">Category</label>
+                        <label for="edit_categoria">Categoría</label>
                         <select id="edit_categoria" name="categoria" required>
                             <option value="villa">Villa</option>
-                            <option value="apartamento">Apartment</option>
-                            <option value="casa">House</option>
-                            <option value="condominio">Condo</option>
+                            <option value="apartamento">Apartamento</option>
+                            <option value="casa">Casa</option>
+                            <option value="condominio">Condominio</option>
                         </select>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group half">
-                            <label for="edit_habitaciones">Bedrooms</label>
+                            <label for="edit_habitaciones">Habitaciones</label>
                             <input type="number" id="edit_habitaciones" name="habitaciones" min="1" required>
                         </div>
 
                         <div class="form-group half">
-                            <label for="edit_banos">Bathrooms</label>
+                            <label for="edit_banos">Baños</label>
                             <input type="number" id="edit_banos" name="banos" min="1" step="0.5" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group half">
-                            <label for="edit_precio">Price</label>
+                            <label for="edit_precio">Precio</label>
                             <input type="number" id="edit_precio" name="precio" min="0" step="0.01" required>
                         </div>
 
                         <div class="form-group half">
-                            <label for="edit_operacion">Operation</label>
+                            <label for="edit_operacion">Operación</label>
                             <select id="edit_operacion" name="operacion" required>
-                                <option value="venta">For Sale</option>
-                                <option value="renta">For Rent</option>
+                                <option value="venta">Venta</option>
+                                <option value="renta">Renta</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="edit_ubicacion">Location</label>
+                        <label for="edit_ubicacion">Ubicación</label>
                         <input type="text" id="edit_ubicacion" name="ubicacion" required>
                     </div>
 
                     <div class="form-actions">
-                        <button type="button" class="btn btn-secondary close-modal-btn">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Update Property</button>
+                        <button type="button" class="btn btn-secondary close-modal-btn">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Actualizar Propiedad</button>
                     </div>
                 </form>
             </div>

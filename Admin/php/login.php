@@ -1,3 +1,4 @@
+<!-- code del login principal -->
 <?php
 include 'conexion.php';
 

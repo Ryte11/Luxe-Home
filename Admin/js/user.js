@@ -60,11 +60,28 @@ document.addEventListener('DOMContentLoaded', function () {
             closeAllModals();
         }
     });
-    
+        
     // Role filtering
     roleFilter.addEventListener('change', function () {
         filterUsersByRole(this.value);
     });
+    
+    // Updated filtering function
+    function filterUsersByRole(role) {
+        const rows = document.querySelectorAll('.users-table tbody tr');
+        
+        rows.forEach(row => {
+            // Get the role directly from the badge element
+            const roleBadge = row.querySelector('.role-badge');
+            const rowRole = roleBadge ? roleBadge.classList[1] : ''; // The second class should be the role
+            
+            if (role === 'all' || rowRole === role) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
     
     // Form submissions
     addUserForm.addEventListener('submit', function (event) {
@@ -302,16 +319,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    function filterUsersByRole(role) {
-        const rows = document.querySelectorAll('.users-table tbody tr');
-        rows.forEach(row => {
-            if (role === 'all' || row.getAttribute('data-role') === role) {
-                row.style.display = '';
-            } else {
-                row.style.display = 'none';
-            }
-        });
-    }
+    
 
 
 
@@ -375,20 +383,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
     
-    // Clear search when role filter changes
-    const roleFilter = document.getElementById('roleFilter');
-    if (roleFilter) {
-        roleFilter.addEventListener('change', function() {
-            searchInput.value = '';
-            // Trigger the input event to clear search filtering
-            searchInput.dispatchEvent(new Event('input'));
-        });
-    }
+    
 });
 
 
+// paginacion
+
 document.addEventListener('DOMContentLoaded', function() {
-    const rowsPerPage = 15;
+    const rowsPerPage = 10;
     const rows = document.querySelectorAll('.users-table tbody tr');
     const totalPages = Math.ceil(rows.length / rowsPerPage);
     const paginationContainer = document.querySelector('.pagination .page-numbers');

@@ -296,3 +296,47 @@ Consulta preparada
 Actualización exitosa
 Fin del proceso
 
+Request recibido: 2025-03-13 01:48:49
+POST data: Array
+(
+    [reservationId] => 
+    [clientName] => Luisanny
+    [property] => luxe house sicaria
+    [phone] => 8299129914
+    [reservationType] => villa
+    [checkInDate] => 2025-03-14
+    [checkOutDate] => 2025-03-19
+    [guestCount] => 3
+    [comments] => dsdsadsadsad
+    [total] => 33333
+    [status] => Confirmed
+)
+
+Conexión establecida
+ID: 0, Nombre: Luisanny, Teléfono: 8299129914, Status: Confirmed
+Consulta preparada
+Actualización exitosa
+Fin del proceso
+
+Request recibido: 2025-03-13 20:09:11
+POST data: Array
+(
+    [reservationId] => 13
+    [clientName] => Dhori
+    [property] => Villa Lujosa Moderna
+    [phone] => 8299129914
+    [reservationType] => Villa
+    [checkInDate] => 2025-03-21
+    [checkOutDate] => 2025-03-14
+    [guestCount] => 22
+    [comments] => esta casa me gusta mucho
+    [total] => 823600.00
+    [status] => Pending
+)
+
+Conexión establecida
+ID: 13, Nombre: Dhori, Teléfono: 8299129914, Status: Pending
+Consulta preparada
+Actualización exitosa
+Fin del proceso
+

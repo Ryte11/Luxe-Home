@@ -105,7 +105,7 @@ $result = $conn->query("SELECT * FROM productos");
                     <td><?= $row['nombre'] ?></td>
                     <td><?= $row['categoria'] ?></td>
                     <td><?= $row['operacion'] ?></td>
-                    <td><img src="<?= $row['imagen'] ?>" alt="<?= $row['nombre'] ?>" width="100"></td>
+                    <td><img src="../Admin/<?= $row['imagen'] ?>" alt="<?= $row['nombre'] ?>" width="100"></td>
                     <td><?= $row['habitaciones'] ?></td>
                     <td><?= $row['banos'] ?></td>
                     <td>$<?= number_format($row['precio'], 2) ?></td>

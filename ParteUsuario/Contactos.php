@@ -17,7 +17,7 @@
       <div class="logo" data-aos="fade-right" data-aos-duration="1400">
         <a href="#">
           <div class="logo_back">
-            <img src="img/icons8-casa-26.png" alt="" />
+            <img src="../Admin/img/icons8-casa-26.png" alt="" />
           </div>
           <h1>Luxe Home</h1>
         </a>
@@ -37,12 +37,12 @@
         <div class="like" onclick="abrirCarrito()">
           <span class="like-button" id="like-button">0</span>
           <button>
-            <img src="img/icons8-me-gusta-24.png" alt="" class="icon1" />
+            <img src="../Admin/img/icons8-me-gusta-24.png" alt="" class="icon1" />
           </button>
         </div>
         <div class="profile" onclick="mostrarFormulario()">
           <button>
-            <img src="img/icons8-usuario-50.png" alt="" class="icon2" />
+            <img src="../Admin/img/icons8-usuario-50.png" alt="" class="icon2" />
           </button>
         </div>
 
@@ -63,7 +63,7 @@
   <div class="over" id="over"></div>
   <div id="carrito1" class="carrito1">
     <div class="arriba_text1">
-      <img src="img/icons8-x-50.png" alt="" onclick="MenuCerrar()">
+      <img src="../Admin/img/icons8-x-50.png" alt="" onclick="MenuCerrar()">
     </div>
     <nav class="nav1" data-aos="fade-down" data-aos-duration="1400" id="ul">
       <ul class="menu1" id="menu">
@@ -133,7 +133,7 @@
         <div class="contactos">
           <div class="iconos_contac">
             <div class="iconos_contac2">
-              <img src="img/icons8-teléfono-desconectado-50.png" alt="" />
+              <img src="../Admin/img/icons8-teléfono-desconectado-50.png" alt="" />
               <div class="texto_contact">
                 <h1>Llama aquí!</h1>
                 <p>829-912-9914</p>
@@ -141,7 +141,7 @@
             </div>
 
             <div class="iconos_contac2">
-              <img src="img/icons8-marcador-de-mapa-64.png" alt="" />
+              <img src="../Admin/img/icons8-marcador-de-mapa-64.png" alt="" />
               <div class="texto_contact">
                 <p>Calle Prol Gracita Alvarez, Santo Domingo</p>
               </div>
@@ -149,14 +149,14 @@
           </div>
           <div class="iconos_contac">
             <div class="iconos_contac2">
-              <img src="img/icons8-preguntas-60.png" alt="" />
+              <img src="../Admin/img/icons8-preguntas-60.png" alt="" />
               <div class="texto_contact">
                 <h1>¿Tienes alguna pregunta?</h1>
                 <a href="https://mail.google.com/mail/u/0/#inbox">luisangelgamer20@gmail.com</a>
               </div>
             </div>
             <div class="iconos_contac2">
-              <img src="img/icons8-calendario-50.png" alt="" />
+              <img src="../Admin/img/icons8-calendario-50.png" alt="" />
               <div class="texto_contact">
                 <h1>Lunes----Viernes</h1>
                 <p>9:00 AM---6:00 PM</p>
@@ -195,7 +195,7 @@
         <div class="contactos">
           <div class="iconos_contac">
             <div class="iconos_contac2">
-              <img src="img/icons8-teléfono-desconectado-50.png" alt="" />
+              <img src="../Admin/img/icons8-teléfono-desconectado-50.png" alt="" />
               <div class="texto_contact">
                 <h1>Llama aquí!</h1>
                 <p>829-912-9914</p>
@@ -203,7 +203,7 @@
             </div>
 
             <div class="iconos_contac2">
-              <img src="img/icons8-marcador-de-mapa-64.png" alt="" />
+              <img src="../Admin/img/icons8-marcador-de-mapa-64.png" alt="" />
               <div class="texto_contact">
                 <p>Av. Circunvalación Nte., Santiago de los Caballeros</p>
               </div>
@@ -211,14 +211,14 @@
           </div>
           <div class="iconos_contac">
             <div class="iconos_contac2">
-              <img src="img/icons8-preguntas-60.png" alt="" />
+              <img src="../Admin/img/icons8-preguntas-60.png" alt="" />
               <div class="texto_contact">
                 <h1>¿Tienes alguna pregunta?</h1>
                 <a href="https://mail.google.com/mail/u/0/#inbox">luisangelgamer20@gmail.com</a>
               </div>
             </div>
             <div class="iconos_contac2">
-              <img src="img/icons8-calendario-50.png" alt="" />
+              <img src="../Admin/img/icons8-calendario-50.png" alt="" />
               <div class="texto_contact">
                 <h1>Lunes----Viernes</h1>
                 <p>9:00 AM---6:00 PM</p>

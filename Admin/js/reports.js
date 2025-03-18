@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function() {
     const rowsPerPage = 15;
-    const rows = document.querySelectorAll('.users-table tbody tr');
+    const rows = document.querySelectorAll('.data-table tbody tr');
     const totalPages = Math.ceil(rows.length / rowsPerPage);
     const paginationContainer = document.querySelector('.pagination .page-numbers');
 

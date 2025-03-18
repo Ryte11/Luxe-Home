@@ -32,7 +32,7 @@ if ($result === false) {
         <div class="logo" data-aos="fade-right" data-aos-duration="1400">
           <a href="#">
             <div class="logo_back">
-              <img src="img/icons8-casa-26.png" alt="" />
+              <img src="../Admin/img/icons8-casa-26.png" alt="" />
             </div>
             <h1>Luxe Home</h1>
           </a>
@@ -52,12 +52,12 @@ if ($result === false) {
           <div class="like" onclick="abrirCarrito()">
             <span class="like-button" id="like-button">0</span>
             <button>
-              <img src="img/icons8-me-gusta-24.png" alt="" class="icon1" />
+              <img src="../Admin/img/icons8-me-gusta-24.png" alt="" class="icon1" />
             </button>
           </div>
           <div class="profile" onclick="mostrarFormulario()">
             <button>
-              <img src="img/icons8-usuario-50.png" alt="" class="icon2" />
+              <img src="../Admin/img/icons8-usuario-50.png" alt="" class="icon2" />
             </button>
           </div>
 
@@ -78,7 +78,7 @@ if ($result === false) {
     <div class="over" id="over"></div>
     <div id="carrito1" class="carrito1">
       <div class="arriba_text1">
-        <img src="img/icons8-x-50.png" alt="" onclick="MenuCerrar()">
+        <img src="../Admin/img/icons8-x-50.png" alt="" onclick="MenuCerrar()">
       </div>
       <nav class="nav1" data-aos="fade-down" data-aos-duration="1400" id="ul">
         <ul class="menu1" id="menu">
@@ -95,7 +95,7 @@ if ($result === false) {
       <div class="contenedor-venta">
         <div class="venta">
           <button class="flecha-iz" data-aos="fade-right" data-aos-duration="1000">
-            <img src="img/Flecha.png" alt="" />
+            <img src="../Admin/img/Flecha.png" alt="" />
           </button>
           <div class="centro" data-aos="fade-up" data-aos-duration="1300">
             <div class="contenido-venta">
@@ -108,7 +108,7 @@ if ($result === false) {
               <div class="details">
                 <div class="Descripcion1">
                   <div class="cama">
-                    <img src="img/Cama.png" alt="" />
+                    <img src="../Admin/img/Cama.png" alt="" />
                   </div>
                   <div>
                     <h1 class="room-label"></h1>
@@ -117,7 +117,7 @@ if ($result === false) {
                 </div>
                 <div class="Descripcion1">
                   <div class="cama">
-                    <img src="img/Baño.png" alt="" />
+                    <img src="../Admin/img/Baño.png" alt="" />
                   </div>
                   <div>
                     <h1 class="baños-label"></h1>
@@ -134,7 +134,7 @@ if ($result === false) {
             </div>
           </div>
           <button class="flecha-de" data-aos="fade-left" data-aos-duration="1000">
-            <img src="img/Flecha.png" alt="" />
+            <img src="../Admin/img/Flecha.png" alt="" />
           </button>
         </div>
       </div>
@@ -186,7 +186,7 @@ if ($result === false) {
   <div id="carrito" class="carrito">
     <div class="arriba_text">
       <h1>Carrito de Compras</h1>
-      <img src="img/icons8-multiply-50.png" alt="" onclick="cerrarCarrito()">
+      <img src="../Admin/img/icons8-multiply-50.png" alt="" onclick="cerrarCarrito()">
     </div>
     <div class="carrito-items1">
       <div class="carrito_text">
@@ -242,7 +242,7 @@ if ($result === false) {
     <div class="form">
       <span class="title">Perfil</span>
       <div class="form-container">
-        <img src="img/icons8-usuario-50.png" alt="" id="perfilImagen" />
+        <img src="../Admin/img/icons8-usuario-50.png" alt="" id="perfilImagen" />
         <h1 id="perfilNombre">Nombre</h1>
         <p id="perfilEmail">Email</p>
       </div>
@@ -290,20 +290,20 @@ if ($result === false) {
           <h3><?= ucfirst($row['operacion']) ?></h3>
         </div>
         <a type="button" class="img-boton" onclick="vermas1()">
-          <img src="<?= $row['imagen'] ?>" alt="" class="img-carta" />
+          <img src="../Admin/<?= $row['imagen'] ?>" alt="" class="img-carta" />
         </a>
         <div class="contenedor-icons">
           <h3 class="title-des"><?= $row['nombre'] ?></h3>
           <div class="info-icon">
-            <img src="img/cama2.png" alt="" />
+            <img src="../Admin/img/cama2.png" alt="" />
             <p><?= $row['habitaciones'] ?> Rooms</p>
-            <img src="img/Bañera.png" alt="" />
+            <img src="../Admin/img/Bañera.png" alt="" />
             <p><?= $row['banos'] ?> BathRooms</p>
           </div>
           <div class="info-icon">
-            <img src="img/Garage.png" alt="" />
+            <img src="../Admin/img/Garage.png" alt="" />
             <p>Garage</p>
-            <img src="img/pool.png" alt="" />
+            <img src="../Admin/img/pool.png" alt="" />
             <p>Pool</p>
           </div>
           <div class="price">
@@ -328,7 +328,7 @@ if ($result === false) {
                 </div>
               </div>
               <div class="eye-icon">
-                <img src="img/Ojo.png" alt="" />
+                <img src="../Admin/img/Ojo.png" alt="" />
               </div>
             </div>
           </div>
@@ -356,7 +356,7 @@ if ($result === false) {
 
     <div class="qn_1">
       <div class="texto_img">
-        <img src="img/Gama_propiedades.png" alt="">
+        <img src="../Admin/img/Gama_propiedades.png" alt="">
         <div class="text1_qn">
           <h1>AMPLIA GAMA DE PROPIEDADES</h1>
           <p>Con una sólida selección de propiedades populares disponibles, así como propiedades líderes de expertos.
@@ -364,7 +364,7 @@ if ($result === false) {
         </div>
       </div>
       <div class="texto2_img">
-        <img src="img/Finanzacion.png" alt="">
+        <img src="../Admin/img/Finanzacion.png" alt="">
         <div class="text1_qn">
           <h1>FINANCIACIÓN FÁCIL</h1>
           <p>Nuestro departamento de finanzas sin problemas puede encontrar soluciones financieras para ahorrarle
@@ -383,14 +383,14 @@ if ($result === false) {
 
     <div class="qn_1">
       <div class="texto_img">
-        <img src="img/icons8-confianza-50 (1).png" alt="">
+        <img src="../Admin/img/icons8-confianza-50 (1).png" alt="">
         <div class="text1_qn">
           <h1>CONFIANZA POR MILES</h1>
           <p>Nuevas ofertas diarias y las mejores opiniones, entre nuestros usuarios y clientes.</p>
         </div>
       </div>
       <div class="texto2_img">
-        <img src="img/Transparencia.png" alt="">
+        <img src="../Admin/img/Transparencia.png" alt="">
         <div class="text1_qn">
           <h1>TRANSPARENCIA</h1>
           <p>Usted y su Vendedor siempre ven la misma información y recibirán toda la información importante
@@ -407,7 +407,7 @@ if ($result === false) {
 
     <div class="qn_1">
       <div class="texto_img">
-        <img src="img/Ubicacion.png" alt="">
+        <img src="../Admin/img/Ubicacion.png" alt="">
         <div class="text1_qn">
           <h1>Cerca de Ti</h1>
           <p>Tienes acceso para buscar en cualquier lugar, cerca de cualquier vecindario, escuela o área que desees.
@@ -415,7 +415,7 @@ if ($result === false) {
         </div>
       </div>
       <div class="texto2_img">
-        <img src="img/Estrella.png" alt="">
+        <img src="../Admin/img/Estrella.png" alt="">
         <div class="text1_qn">
           <h1>Puedes escoger</h1>
           <p>Puedes escoger, si deseas rentar, comprar o una villa para un fin de semana. Esto te lo permitimos y con el

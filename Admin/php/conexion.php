@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $usuario = "root"; 
-$clave = "qwerty"; 
+$clave = ""; 
 $base_de_datos = "luxe-home";
 
 $conn = new mysqli($host, $usuario, $clave, $base_de_datos);

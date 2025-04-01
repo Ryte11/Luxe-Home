@@ -251,11 +251,6 @@ if ($result === false) {
   </div>
 
 
-
-  <!-- vistas de procuctos -->
-
-
-
   <!-- catalogo de destacados -->
 
 
@@ -283,7 +278,7 @@ if ($result === false) {
 
   <!-- interactivo generacion -->
 
- <div class="catalogo" id="catalogo">
+  <div class="catalogo" id="catalogo">
     <?php while ($row = $result->fetch_assoc()): ?>
       <div class="info-carta" data-tipo="<?= $row['categoria'] ?>-<?= $row['operacion'] ?>">
         <div class="venta1">
@@ -312,8 +307,7 @@ if ($result === false) {
             </div>
             <div class="contenedor-icons1">
               <div class="heart-container" title="Like">
-                <input type="checkbox" class="checkbox" id="Corazon"
-                  onclick="agregarAlCarrito('<?= $row['imagen'] ?>', '<?= $row['categoria'] ?>', <?= $row['precio'] ?>)" />
+                <input type="checkbox" class="checkbox" id="Corazon" onclick="agregarAlCarrito('<?= $row['imagen'] ?>', '<?= $row['categoria'] ?>', <?= $row['precio'] ?>)" />
                 <div class="svg-container">
                   <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -328,7 +322,7 @@ if ($result === false) {
                 </div>
               </div>
               <div class="eye-icon">
-                <img src="../Admin/img/Ojo.png" alt="" />
+                <img src="../Admin/img/Ojo.png" alt="" onclick="vermas()"/>
               </div>
             </div>
           </div>
@@ -339,7 +333,84 @@ if ($result === false) {
       </div>
     <?php endwhile; ?>
   </div>
+  <!-- ver mas  -->
+  <div class="overlay" id="overlay"></div>
+  <div class="ver_mas" id="ver_mas1">
 
+    <div class="info-carta_verMas" id="articulo" data-tipo="Villas-Rentas">
+      <div class="venta1VerMas">
+        <h3>Rentar</h3>
+
+      </div>
+      <div class="carrusel">
+        <img src="img/Fondo2.jpg" alt="" class="img-cartaVerMas" id="img1" />
+        <img src="img/Fondo3.jpg" alt="" class="img-cartaVerMas" id="img2" />
+        <img src="img/Fondo4.jpg" alt="" class="img-cartaVerMas" id="img3" />
+
+      </div>
+      <button id="prev"><i class="fas fa-chevron-left"></i></button>
+      <button id="next"><i class="fas fa-chevron-right"></i></button>
+      <div class="contenedor-tetxVerMas">
+        <div class="x">
+          <h3 class="title-desVerMas">Beautiful Luxury House/Punta Cana Villa</h3>
+          <img src="img/icons8-multiply-50.png" alt="" onclick="vermasCerrar()">
+        </div>
+        <p class="subtitle-VerMas">Experimenta el encanto incomparable de nuestra Beautiful Luxury House en Punta Cana.
+          Sumérgete en el lujo y la elegancia de esta villa excepcional, donde cada detalle ha sido cuidadosamente
+          diseñado para ofrecerte una experiencia inolvidable en el paraíso. </p>
+        <div class="centrar">
+          <div class="linea5"></div>
+        </div>
+        <div class="info-iconVerMas">
+          <img src="img/cama2.png" alt="" />
+          <p>5 Rooms</p>
+
+          <img src="img/Bañera.png" alt="" />
+          <p>4 BathRooms</p>
+        </div>
+        <div class="info-icon">
+          <img src="img/Garage.png" alt="" />
+          <p>4 Garage</p>
+
+          <img src="img/Garden.png" alt="" />
+          <p>Big Garden</p>
+        </div>
+        <div class="centrar">
+          <div class="linea5"></div>
+        </div>
+        <div class="priceVerMas">
+          <div class="boton-compraVErmas">
+            <div class="eye-icon">
+              <h3>$420/Noche</h3>
+            </div>
+            <a href="formulario_compra.html">
+              <button>Rentar</button>
+            </a>
+
+          </div>
+          <div class="contenedor-icons1VerMas">
+
+            <div class="heart-container" title="Like">
+              <input type="checkbox" class="checkbox" id="Corazon"
+                onclick="agregarAlCarrito('img/Fondo1.jpg','Villa', 500)" />
+              <div class="svg-container">
+                <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                  </path>
+                </svg>
+                <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                  </path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="boton-vermas">
     <a href="Productos.php">
@@ -437,6 +508,7 @@ if ($result === false) {
       </div>
       <div class="footerNav">
         <ul>
+          <li><a href="../index.php">Manual de usuario</a></li>
           <li><a href="index.html">Home</a></li>
           <li><a href="#seccion1">Destacados</a></li>
           <li><a href="#seccion2">Quienes somos</a></li>

@@ -397,3 +397,43 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+// ver mas
+
+// Mostrar el pop-up de "Ver Más"
+
+document.addEventListener('DOMContentLoaded', function () {
+   
+});
+function vermas() {
+    const overlay = document.getElementById('overlay');
+    const verMasPopup = document.getElementById('ver_mas1');
+
+    if (overlay && verMasPopup) {
+        overlay.style.display = 'block';
+        verMasPopup.style.display = 'flex';
+    } else {
+        console.error('No se encontraron los elementos con los IDs "overlay" o "ver_mas1".');
+    }
+}
+
+// Cerrar el pop-up
+function vermasCerrar() {
+    const overlay = document.getElementById('overlay');
+    const verMasPopup = document.getElementById('ver_mas1');
+
+    if (overlay && verMasPopup) {
+        overlay.style.display = 'none';
+        verMasPopup.style.display = 'none';
+    }
+}
+// Detectar clic fuera del pop-up para cerrarlo
+document.addEventListener('DOMContentLoaded', function () {
+    const overlay = document.getElementById('overlay');
+    overlay.addEventListener('click', function (event) {
+        const verMasPopup = document.getElementById('ver_mas1');
+        if (!verMasPopup.contains(event.target)) {
+            vermasCerrar();
+        }
+    });
+});
